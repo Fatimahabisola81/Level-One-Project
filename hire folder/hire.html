@@ -1,0 +1,3051 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+
+
+
+
+
+
+
+    <style>
+        body {
+            overflow-x: hidden;
+            padding-top: 120px;
+
+        }
+
+
+
+
+
+        .gradient {
+            position: relative;
+            background: linear-gradient(to right, #0034E8, #001FAA);
+        }
+
+
+        .opaque {
+            background: linear-gradient(to right, #CCDDFF, #CCD4F2)
+        }
+
+
+        .try {
+            position: absolute;
+        }
+
+
+
+        .Hover-try:hover .try {
+            display: block !important;
+            z-index: 1050;
+        }
+
+
+
+        .dropdown:hover .dropdown-menu {
+            display: block !important;
+            z-index: 1050 !important;
+        }
+
+
+
+        .dropdown-menu {
+            right: 0 !important;
+        }
+
+
+
+        ul,
+        li {
+            list-style-type: none;
+        }
+
+
+        .nav-2:hover {
+            /* width: 230px; */
+            background-color: #F5F8FF;
+            border-radius: 20px;
+
+
+
+        }
+
+
+        .icon {
+            /* filter: invert(150%) sepia(100%) saturate(2000%) hue-rotate(100deg); */
+            /* fill: blue; */
+
+
+            background-color: #1877F2 !important;
+            mask: url(./imagehire/imgi_210_default.png) no-repeat center;
+            -webkit-mask: url(./imagehire/imgi_210_default.png) no-repeat center;
+            width: 30px;
+            height: 30px;
+            mask-size: cover;
+
+        }
+
+
+
+        .icon-2 {
+            background-color: #1877F2 !important;
+            mask: url(./imagehire/imgi_211_default.png) no-repeat center;
+            -webkit-mask: url(./imagehire/imgi_211_default.png) no-repeat center;
+            width: 30px;
+            height: 30px;
+            mask-size: cover;
+        }
+
+
+        .icon-3 {
+            width: 30px;
+            height: 30px;
+        }
+
+
+
+
+
+
+        .nav2-color:hover {
+            color: blue !important;
+        }
+
+
+
+        .anchor {
+            text-decoration: none;
+        }
+
+        .anchor:hover {
+            text-decoration: underline;
+        }
+
+
+
+        ::placeholder {
+            color: #6195FC !important;
+            /* opacity: 1; */
+        }
+
+
+
+
+        .search {
+            display: none;
+        }
+
+
+        .over {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .picture-container {
+            position: relative;
+            width: 320px;
+            height: 293px;
+        }
+
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+
+        }
+
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+
+        }
+
+
+        /* .picture-container .hover-container {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        } */
+
+
+        .picture-container:hover .hover-container {
+            transform: scale(1.1);
+            transition-duration: .1s;
+        }
+
+        .picture-container:hover .image {
+            transform: scale(1.1);
+            transition-duration: .1s;
+        }
+
+
+
+        .hover-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 320px;
+            height: 293px;
+            border-radius: 10px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); */
+            /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2)); */
+            display: none;
+        }
+
+
+
+
+        .picture-container:hover .hover-container {
+            display: block;
+            display: flex;
+
+        }
+
+
+
+
+        .picture-container:hover .text-overlay {
+            display: none;
+        }
+
+
+
+
+
+
+
+
+        .card-container {
+            width: 380px;
+            background-color: #ffffff;
+            border: 1px solid grey;
+            /* height: 300px; */
+            border-radius: 5px;
+            transition: transform 0.2 ease-in-out;
+        }
+
+        .card-container:hover {
+            transform: translateY(-10px);
+        }
+
+
+
+        .images2 {
+            position: relative;
+        }
+
+
+        .circle-image {
+            /* position: absolute; */
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+
+        .button-pro {
+            top: 45;
+        }
+
+
+        .views {
+            top: -47px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* display: none; */
+        }
+
+        .button-1:hover .views {
+            display: flex !important;
+        }
+
+
+        .buttoncolor:hover {
+            background-color: #D9ECFF !important;
+        }
+
+
+        .button-2:hover {
+            background-color: #F2F2F2 !important;
+        }
+
+
+        .buttoncolor {
+            border: 1px solid lightgrey !important;
+        }
+
+
+        .button-2 {
+            border: 1px solid lightgrey !important;
+        }
+
+
+
+
+
+
+
+
+        .flex-card {
+            /* top: -100%; */
+            /* left: 50%; */
+            /* transform: translate(-50% -50%); */
+        }
+
+
+
+        .arrow-container {
+            position: relative;
+            width: 70%;
+            margin: 40px auto;
+        }
+
+
+        .arrow {
+            height: 4px;
+            position: relative;
+            background-color: #C0D3FA;
+        }
+
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            /* right: -20px; */
+            /* top: -5px; */
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-left: 30px solid #C0D3FA;
+
+        }
+
+        .flexed-card {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-130px);
+            width: 100%;
+            /* left: 50%; */
+        }
+
+
+
+        .tap {
+            top: 15%;
+            /* left: 50%; */
+            transform: translate(-50% -50%);
+        }
+
+
+
+
+
+
+
+
+
+        @media (max-width:480px) {
+
+
+            .adobe-hover {
+                display: none;
+            }
+
+
+            .adobe-black:hover .adobe-hover {
+                display: block;
+            }
+
+
+
+
+        }
+    </style>
+
+    <!-- navbar-brand -->
+
+
+</head>
+
+<body>
+    <nav class=" navbar-first navbar fixed-top navbar-expand-lg navbar-light bg-white p-3"
+        style="position-relative; z-index: 9999;">
+        <div class="container-fluid">
+            <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                <img src="./imagehire/behance_short_logo-removebg-preview.png" alt="" width="40px">
+            </button>
+            <a class=" burger  d-none d-lg-block" href="#"><img src="./imagehire/behance_logo-removebg-preview.png"
+                    alt="" width="95px"></a>
+
+            <div class="search d-flex gap-3 align-items-center d-lg-none ">
+                <button class=" text-light rounded-5 border border-0 fw-medium"
+                    style="width: 100px; height: 32px; background-color: #0057FF;">Use App</button>
+                <img src="./imagehire/material-symbols--search.png" alt="" width="25px">
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class=" d-flex align-items-center navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class=" fw-bold text-dark nav-link active" aria-current="page" href="../Level1 project/index.html"
+                            style="font-size: 18px;">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class=" fw-bold text-dark nav-link" href="#" style="font-size: 18px;">Find Jobs</a>
+                    </li>
+
+
+
+                    <li class=" nav-item dropdown position-relative">
+                        <a class=" nav-link" href="../hire folder/hire.html">
+                            Hire Freelancers
+                            <img src="./imagehire/ri--arrow-drop-down-line (1).png" alt="" width="30px">
+                        </a>
+                        <ul class="dropdown-menu d-none position-absolute">
+                            <div class="d-flex align-items-center">
+                                <img src="./imagehire/streamline-ultimate--notes-book-text-bold.png" alt="" width="18px"
+                                    class="ms-4">
+                                <li><a class="dropdown-item fw-bold" href="#">My Freelance Project</a></li>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="./imagehire/fluent--search-48-regular.png" alt="" width="20px" class="ms-4">
+                                <li><a class="dropdown-item fw-bold" href="#">Find Creatives</a></li>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <img src="./imagehire/tabler--info-circle.png" alt="" width="20px" class="ms-4">
+                                <li><a class="dropdown-item fw-bold" href="#">Hiring on Behance</a></li>
+                            </div>
+
+                            <div class="d-flex align-items-center">
+                                <img src="./imagehire/iconamoon--sign-plus-circle-thin.png" alt="" width="20px"
+                                    class="ms-4">
+                                <li><a class="dropdown-item fw-bold" href="#">New Freelance Project</a></li>
+                            </div>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item ms-2 text-secondary" href="#">Logo Designers</a></li>
+                            <li><a class="dropdown-item ms-2 text-secondary" href="#">Brand Designers</a></li>
+                            <li><a class="dropdown-item ms-2 text-secondary" href="#">Website Designers</a></li>
+                            <li><a class="dropdown-item ms-2 text-secondary" href="#">Illustrators</a></li>
+                            <li><a class="dropdown-item ms-2 text-secondary" href="#">Social Media Designers</a></li>
+                        </ul>
+                    </li>
+
+                    <span class="" style="color: grey;">|</span>
+                    <li class="nav-item dropdown position-relative">
+                        <a class=" fw-bold text-dark nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="font-size: 18px;">
+                            Career Resources
+                            <img src="./imagehire/ri--arrow-drop-down-line (1).png" alt="" width="30px">
+                        </a>
+                        <ul class="dropdown-menu d-none position-absolute">
+                            <li><a class="dropdown-item fw-bold" href="#">Overview</a></li>
+                            <li><a class="dropdown-item fw-bold" href="#">Career Guides</a></li>
+                            <li>
+                                <!-- <hr class="dropdown-divider"> -->
+                            </li>
+                            <li><a class="dropdown-item fw-bold" href="#">Commissioned Projects</a></li>
+                            <li><a class="dropdown-item fw-bold" href="#">Creative Apprenticeship</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="Hover-try">
+                    <a href="../start free trial folder/trial.html">
+                        <div class="gradient bg-primary rounded-pill p-2 ps-4 text-light fw-medium position-relative "
+                        style="width: 150px; height: 40px;">Start Free Trial</div>
+                    </a>
+                    
+
+                    <div class=" ps-3 pt-1 try rounded-2 d-flex text-align-center justify-content-center mt-3 d-none position-absolute"
+                        style="width: 300px; height: 35px;  background-color: black; color: white; margin-left: -70px;">
+                        Try
+                        Behance
+                        Pro with a 7-day free trial</div>
+                </div>
+                <button class="rounded-pill fw-medium text-primary border-0 ms-3"
+                    style="width: 100px; height: 38px ">Sign In</button>
+
+
+                <li class=" nav-item dropdown position-relative">
+                    <a class=" text-dark fw-bold nav-link" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false" style="font-size: 18px;">
+                        <img src="./imagehire/Adobe_black_logo-removebg-preview.png" alt="" width="70px" class="ms-3">
+                    </a>
+
+
+
+
+                    <ul class=" dropdown-menu d-none position-absolute p-3">
+                        <div class="p-2 rounded-2 mb-1" style="width: 500px; height: 73px; background-color: #DEE8FF; ">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img src="./imagehire/Adobe_red_logo-removebg-preview.png" alt="" width="25px"
+                                            class="ms-3">
+                                    </div>
+                                    <p class="text-secondary mt-3 ms-3">|</p>
+                                    <div class="lh-1 ">
+                                        <li><a class="dropdown-item fw-bold text-primary" href="#">Go to adobe.com</a>
+                                        </li>
+                                        <li><a class="dropdown-item text-primary" style="font-size: 13px;"
+                                                href="#">Access your apps, services, files and more </a></li>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <img src="./imagehire/pajamas--arrow-right.png" alt="" width="30px">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="p-2 rounded-2 mb-1" style="width: 500px; height: 73px; background-color: #DEE8FF;">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img src="./imagehire/adobe_colored_logo-removebg-preview.png" alt=""
+                                            width="25px" class="ms-3">
+                                    </div>
+                                    <p class="text-secondary mt-3 ms-3">|</p>
+                                    <div class="lh-1 ">
+                                        <li><a class="dropdown-item fw-bold text-primary" href="#">Get Adobe Express
+                                                Free</a>
+                                        </li>
+                                        <li><a class="dropdown-item text-primary" style="font-size: 13px;"
+                                                href="#">Quickly make content from
+                                                thousands of free templates</a></li>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <img src="./imagehire/pajamas--arrow-right.png" alt="" width="30px">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="p-2 rounded-2 mb-1" style="width: 500px; height: 73px; background-color: #DEE8FF; ">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img src="./imagehire/adobe_stock_logo-removebg-preview.png" alt="" width="30px"
+                                            class="ms-3">
+                                    </div>
+                                    <p class="text-secondary mt-3 ms-3">|</p>
+                                    <div class="lh-1 ">
+                                        <li><a class="dropdown-item fw-bold text-primary" href="#">30-day free trial of
+                                                Adobe Stock</a>
+                                        </li>
+                                        <li><a class="dropdown-item text-primary" style="font-size: 13px;"
+                                                href="#">835M+ assets, plus edit with ease using generative AI</a></li>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <img src="./imagehire/pajamas--arrow-right.png" alt="" width="30px">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="p-2 rounded-2 mb-1" style="width: 500px; height: 73px; background-color: #DEE8FF; ">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div>
+                                        <img src="./imagehire/behance_short_logo-removebg-preview.png" alt=""
+                                            width="40px" class="ms-1">
+                                    </div>
+                                    <p class="text-secondary mt-3 ms-2">|</p>
+                                    <div class="lh-1 ">
+                                        <li><a class="dropdown-item fw-bold text-primary" href="#">7 day free trial of
+                                                Behance Pro</a>
+                                        </li>
+                                        <li><a class="dropdown-item text-primary" style="font-size: 13px;"
+                                                href="#">Supercharge your creative career with behance pro</a></li>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <img src="./imagehire/pajamas--arrow-right.png" alt="" width="30px">
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                    </ul>
+                </li>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white mt-3 d-md-block d-sm-block "
+        style="top: 56px; ">
+        <div class="container-fluid  " style="">
+
+            <div class=" overflow collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class=" overflow-2 navbar-nav mx-auto mb-2 mb-lg-0 d-flex gap-" style="">
+
+
+                    <div class="nav-2 d-flex gap-2 justify-content-center align-items-center" style="width: 240px;">
+                        <img src="./imagehire/imgi_207_default.png" alt="" width="16px" class="">
+
+                        <a class=" nav2-color nav-link active fw-bold" aria-current="page" href="#">My Freelance
+                            projects</a>
+                    </div>
+
+                    <div class="nav-2 d-flex gap-2 justify-content-center align-items-center" style="width: 200px;">
+                        <img src="./imagehire/fluent--search-48-regular.png" alt="" width="20px" class="" style="">
+
+                        <a class=" nav2-color nav-link active fw-bold" aria-current="page" href="#">Find
+                            Creatives</a>
+                    </div>
+
+                    <div class="nav-2 d-flex gap-2 justify-content-center align-items-center" style="width: 220px;">
+                        <img src="./imagehire/tabler--info-circle.png" alt="" width="20px" class="" style="">
+
+                        <a class=" nav2-color nav-link active fw-bold" aria-current="page" href="#">Hiring on
+                            Behance</a>
+                    </div>
+
+
+                    <div class="nav-2 d-flex gap-2 justify-content-center align-items-center" style="width: 240px;">
+                        <img src="./imagehire/iconamoon--sign-plus-circle-thin.png" alt="" width="16px" class="">
+
+                        <a class=" nav2-color nav-link active fw-bold" aria-current="page" href="#">New Freelance
+                            project</a>
+                    </div>
+
+
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class=" d-flex justify-content-center align-items-center"
+        style="background-color: #FDFDFF; flex-direction: column">
+
+        <div class=" mt-5" style="">
+            <h1 class="fw-medium "
+                style="font-size: 4.5vw; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1;">
+                Hire The World's Best </h1>
+            <h1 class="fw-medium"
+                style="font-size: 4.5vw; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-left: -45px;  line-height: 1">
+                Freelancers on Behance</h1>
+        </div>
+        <p class="fs-5 fw-medium">Skip the search. Get instant AI-powered matches. <a class="text-dark" href=""> Adobe
+                Generative AI Terms</a></p>
+
+
+        <form class="d-flex position-relative mt-4 d-xs-none d-sm-none d-md-block" style="margin-left: -50px;"
+            role="search">
+
+            <div class=" position-absolute translate-middle-y top-50 ms-2  fw-medium d-flex align-items-center justify-content-center"
+                style="width: 150px; height: 43px; background-color: #EBF1FF; color: #5357FF; font-size: 18px; margin-top: -1px; border-top-left-radius: 20px; border-bottom-left-radius: 20px;">
+                I'm looking for</div>
+
+            <input class="form-control me-2 rounded-pill text-primary fw-medium bg-white" type="search"
+                placeholder="an illustrator for my pet food company, budget of $800" aria-label="Search"
+                style="width: 900px; height: 63px; padding-left: 170px; font-size: 18px;" />
+
+            <div class="opaque rounded-pill bg- position-absolute translate-middle-y top-50 end-0 me-3  d-flex justify-content-center align-items-center"
+                style="width: 45px; height: 45px; opacity: ;">
+                <img src="./imagehire/iconamoon--arrow-right-2.png" alt="" width="35px">
+            </div>
+
+        </form>
+
+
+        <div class="d-none d-xs-block d-sm-block d-md-none">
+            <p class="text-dark fw-medium mb-2" style="font-size: 15px;">I'm looking for</p>
+            <form class="d-flex mb-2" role="search">
+                <input class="form-control me-2 fw-medium rounded-4 border border-primary ps-4 pb-"
+                    style="width: 550px; height: 80px;  font-size: 18px; padding-bottom: 35px;" type="search"
+                    placeholder="an illustrator for my pet food company, budget of $800" aria-label="Search" />
+            </form>
+            <div class="rounded-pill text-light fw-bold d-flex justify-content-center align-items-center"
+                style="width: 550px; height: 40px; background-color: #E8E8E8; font-size: 18px;">create my project</div>
+        </div>
+
+        <p class="mt-3">By using Behance, you are agreeing to the Adobe <a class="text-dark" href="">Terms of Use </a>
+            and <a class="text-dark" href="">Privacy Policy</a></p>
+
+    </div>
+
+
+
+
+
+
+
+    <div class="over mt-5"
+        style="background-color: #FAFBFF; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+
+
+
+        <div class="mb-" style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 23px; margin-bottom: 60px;">
+            <div class="picture-container">
+                <img src="./imagehire/imgi_239_hire-landing-graphic-design.jpeg" alt=""
+                    style="width: 320px; height: 2939x; border-radius: 10px;  filter: brightness(50%);" class="image">
+
+                <div class=" text-overlay fw-bold text-white text-" style="font-size: 22px;">Graphic Design</div>
+                <div class="hover-container">
+                    <div class="hover-text" style="">
+                        <p class="fw-bold  text-white" style="font-size: 23px;">Graphic Design</p>
+                        <img src="imagehire/imgi_245_avatars-graphic-design-removebg-preview.png" alt="" width="150px">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="picture-container">
+                <img src="./imagehire/imgi_241_hire-landing-cat-logo-design.jpeg" alt=""
+                    style="width: 320px; height: 2939x; border-radius: 10px;  filter: brightness(50%);" class="image">
+
+                <div class=" text-overlay fw-bold text-white text-" style="font-size: 22px;">Logo Design</div>
+                <div class="hover-container">
+                    <div class="hover-text" style="">
+                        <p class="fw-bold  text-white" style="font-size: 23px;">Logo Design</p>
+                        <img src="imagehire/imgi_246_avatars-logo-design-removebg-preview.png" alt="" width="150px">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="picture-container">
+                <img src="./imagehire/imgi_243_hire-landing-cat-branding.jpeg" alt=""
+                    style="width: 320px; height: 2939x; border-radius: 10px;  filter: brightness(50%);" class="image">
+
+                <div class=" text-overlay fw-bold text-white text-" style="font-size: 22px;">Branding Services</div>
+                <div class="hover-container">
+                    <div class="hover-text" style="">
+                        <p class="fw-bold  text-white" style="font-size: 23px;">Branding Services</p>
+                        <img src="imagehire/imgi_247_avatars-branding-services-removebg-preview.png" alt=""
+                            width="150px">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="picture-container">
+                <img src="./imagehire/imgi_245_hire-landing-cat-web.jpeg" alt=""
+                    style="width: 320px; height: 2939x; border-radius: 10px;  filter: brightness(50%);" class="image">
+
+                <div class=" text-overlay fw-bold text-white text-" style="font-size: 22px;">Website Design</div>
+                <div class="hover-container">
+                    <div class="hover-text" style="">
+                        <p class="fw-bold  text-white" style="font-size: 23px;">Website Design</p>
+                        <img src="imagehire/imgi_248_avatars-website-design-removebg-preview.png" alt="" width="150px">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="picture-container">
+                <img src="./imagehire/imgi_247_hire-landing-cat-social.jpeg" alt=""
+                    style="width: 320px; height: 2939x; border-radius: 10px;  filter: brightness(50%);" class="image">
+
+                <div class=" text-overlay fw-bold text-white text-" style="font-size: 22px;">Social Media Design</div>
+                <div class="hover-container">
+                    <div class="hover-text" style="">
+                        <p class="fw-bold  text-white" style="font-size: 23px;">Social Media Design</p>
+                        <img src="imagehire/imgi_249_avatars-social-media-design-removebg-preview.png" alt=""
+                            width="150px">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="picture-container">
+                <img src="./imagehire/imgi_249_hire-landing-cat-illustration.jpeg" alt=""
+                    style="width: 320px; height: 2939x; border-radius: 10px;  filter: brightness(50%);" class="image">
+
+                <div class=" text-overlay fw-bold text-white text-" style="font-size: 22px;">Illustrations</div>
+                <div class="hover-container">
+                    <div class="hover-text" style="">
+                        <p class="fw-bold  text-white" style="font-size: 23px;">Illustrations</p>
+                        <img src="imagehire/imgi_250_avatars-illustrations-removebg-preview.png" alt="" width="150px">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="picture-container">
+                <img src="./imagehire/imgi_251_hire-landing-cat-architecture.jpeg" alt=""
+                    style="width: 320px; height: 2939x; border-radius: 10px;  filter: brightness(50%);" class="image">
+
+                <div class=" text-overlay fw-bold text-white text-" style="font-size: 22px;">Architexture & <br>
+                    Interior Design</div>
+                <div class="hover-container">
+                    <div class="hover-text" style="">
+                        <p class="fw-bold  text-white" style="font-size: 23px;">Architexture & <br> Interior Design</p>
+                        <img src="imagehire/imgi_251_avatars-architecture-interior-design__1_-removebg-preview.png"
+                            alt="" width="150px">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="picture-container">
+                <img src="./imagehire/imgi_253_hire-landing-cat-uiux.jpeg" alt=""
+                    style="width: 320px; height: 2939x; border-radius: 10px;  filter: brightness(50%);" class="image">
+
+                <div class=" text-overlay fw-bold text-white text-" style="font-size: 22px;">UI/UX Design</div>
+                <div class="hover-container">
+                    <div class="hover-text" style="">
+                        <p class="fw-bold  text-white" style="font-size: 23px;">UI/UX Design</p>
+                        <img src="imagehire/imgi_252_avatars-ui-ux-design-removebg-preview.png" alt="" width="150px">
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+
+        <button class="bg-white rounded-pill  fw-bold  "
+            style="width: 250px; height: 50px;  border: 1px solid lightgrey;">Browse All Categories</button>
+
+        <div class=" mb-5" style="width: 1370px; border: 1px solid #E5E5E5; margin-top: 100px;"></div>
+
+
+    </div>
+
+
+
+    <div class="W-100" style="background-color: #F6F8FF;">
+        <div class="d-flex justify-content-center align-items-center row  " style="gap: 70px;">
+            <div class=" left col-lg-5 col-sm-12" style="margin-left: 200px;">
+                <div>
+                    <h1 class="" style="font-size: 3.5vw;">Why hire on Behance?</h1>
+                    <p class="fw-medium fs-"
+                        style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 22px;">Hiring
+                        freelance talent on Behance is seamless and secure.</p>
+                </div>
+                <div class="d-flex align-items-center gap-4 mt-5">
+                    <div>
+                        <img src="./imagehire/imgi_210_default.png" alt="" width="px" class="icon">
+                    </div>
+                    <div class="lh-1">
+                        <p class="fw-medium fs-5">Access to the world’s best creators</p>
+                        <p class="" style="font-size: 18px; color: grey;">Get matched from a pool of over 2 million
+                            qualified freelancers</p>
+                    </div>
+                </div>
+
+
+                <div class="d-flex align-items-center gap-4 mt-3">
+                    <div>
+                        <img src="./imagehire/imgi_211_default.png" alt="" width="px" class="icon-2" width="30px">
+                    </div>
+                    <div class="lh-1 mt">
+                        <p class="fw-medium fs-5">All the right tools in one place</p>
+                        <p class="" style="font-size: 18px; color: grey;">Start conversations, share files, and join
+                            video calls with candidates</p>
+                    </div>
+                </div>
+
+
+                <div class="d-flex align-items-center gap-4 mt-3">
+                    <div>
+                        <img src="./imagehire/imgi_224_default.png" alt="" width="px" class="icon-3" width="30px">
+                    </div>
+                    <div class="lh-1 mt">
+                        <p class="fw-medium fs-5">Secure payments</p>
+                        <p class="" style="font-size: 18px; color: grey;">Pay seamlessly and securely with a debit or
+                            credit card on Behance</p>
+                    </div>
+                </div>
+
+
+
+                <div class="d-flex align-items-center gap-4 mt-3">
+                    <div>
+                        <img src="./imagehire/imgi_224_default.png" alt="" width="px" class="icon-3" width="30px">
+                    </div>
+                    <div class="lh-1 mt">
+                        <p class="fw-medium fs-5">No platform fee with Behance Pro</p>
+                        <p class="" style="font-size: 18px; color: grey;">Platform fees are waived for freelancers with
+                            Behance Pro</p>
+                    </div>
+                </div>
+
+                <div class="d-flex gap-3 mt-5" style="padding-left: 230px;">
+                    <button class="rounded-pill bg-primary text-white fw-medium col-sm-12"
+                        style="width: 180px; height: 43px; font-size: 18px; border: none;">Get Started</button>
+                    <button class="rounded-pill bg-white fw-medium col-sm-12"
+                        style="width: 230px; height: 40px; font-size: 18px; border: 1px solid grey;">Browse
+                        Freelancers</button>
+                </div>
+            </div>
+            <div class="right col-lg-4 col-sm-12" style="margin-top: px;">
+                <img src="./imagehire/imgi_106_hire-landing-why-removebg-preview.png" alt="" width="500px">
+            </div>
+        </div>
+
+
+        <div class=""
+            style="width: 1370px; border: 1px solid #E5E5E5; margin-top: 100px; display: flex; justify-self: center; ">
+        </div>
+    </div>
+
+
+    <div class="w-100" style="background-color: #F9FAFE; padding-top: 100px; padding-bottom: 120px;">
+        <div class="" style="padding-left: 325px;">
+            <p class="fs-4 fw-bold text-primary"
+                style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Our Freelancers</p>
+            <h1 class=" lh-1" style="font-size: 3.5vw;">
+                Hire top freelancers hand-selected </h1>
+            <h1 class=" lh-1" style="font-size: 3.7vw; ">
+                by the Behance team.</h1>
+
+            <div class="d-flex gap-5 mt-5 ">
+                <p class="fw-medium" style="color: grey;">All</p>
+                <p class="fw-medium" style="color: grey;">Logo Designers</p>
+                <p class="fw-medium" style="color: grey;">Brand Designers</p>
+                <p class="fw-medium" style="color: grey;">Illustrators</p>
+                <p class="fw-medium" style="color: grey;">UI/UX Designers</p>
+            </div>
+
+
+            <div class="" style="width: 1370px; border: 1px solid #E5E5E5; margin-top: px; display: flex;  ">
+            </div>
+
+            <div class="container-fluid mb-5 mt-4">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="carousel-container">
+                            <div class="carousel-inner d-flex overflow-auto">
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_10_045e37217071577.Y3JvcCwzMDY4LDI0MDAsNjgsMA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_11_b7e0f9230651361.Y3JvcCwzNjgyLDI4ODAsODIsMA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_12_fa003a230552350.Y3JvcCwxNTU0LDEyMTYsMzAsMA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_13_115.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Opedia Studio</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Bangladesh
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Opedia Studio completed 271 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">271 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Opedia</button>
+
+                                </div>
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_14_f68b11233570583.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_15_da5846230645445.Y3JvcCwzMDQ5LDIzODUsNzg0LDA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_16_dbfed0233070725.Y3JvcCw0NjAyLDM2MDAsOTU2LDA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_17_115.jpg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Numan Qadir</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">United
+                                                    Kingdom
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Numan Studio completed 105 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">105 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Numan</button>
+
+                                </div>
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_18_550240233491497.Y3JvcCw4OTksNzAzLDI0OSw0Mg.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_19_f7a041233486725.Y3JvcCwxMTgwLDkyMywzNzEsNzg.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_20_d64e5d229232233.Y3JvcCwxMzgwLDEwODAsNTQsMA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_21_115.jpg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Studio Moara</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Indonesia
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Studio Moara completed 99 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">99 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Studio</button>
+
+                                </div>
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_22_775c81222808157.Y3JvcCwxMDkyLDg1NCw2Nyw0MjQ.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_23_77ed51230720061.Y3JvcCwyNDgwLDE5MzksMCwyMDI.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_24_3bb5b7218020725.Y3JvcCwyODI3LDIyMTEsOTAsNjk.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_25_115.jpg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Laurentiu Gabriel Dumitru</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Romania
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: ; justify-self: center;">
+                                            <p class="text-white fw-medium lh-" style="line-height: 0;">Laurentiu
+                                                Gabriel Dumitru completed 97 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href="" class="text-white"
+                                                    style="line-height: 0;">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">97 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Laurentiu
+                                        Gabriel</button>
+
+                                </div>
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_26_53b943198117363.Y3JvcCw4NzEsNjgyLDE2OCww.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_27_98d81b182994829.Y3JvcCw4NDgsNjYzLDE0OSwxMjcz.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_28_b2d253163781213.Y3JvcCwxMDY1Niw4MzM1LDE4NCww.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_29_115.png" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Tiago Leitao</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Portugal
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Tiago Leitao completed 87 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">87 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Tiago</button>
+
+                                </div>
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_30_8890bb235872445.Y3JvcCw0MzIxLDMzNzksMCw0Mg.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_31_ad09d2234071079.Y3JvcCwxMjc1LDk5NywwLDEwMA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_32_73c96b226200391.Y3JvcCwxNjgwLDEzMTQsMCwxMTU2.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_33_115.jpg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Sourav M</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">India
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Sourav M completed 82 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">82 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Sourav</button>
+
+                                </div>
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_34_3ebc4e235978293.Y3JvcCwzMDU2LDIzOTAsMTE0MiwzMDI.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_35_3ef232234918681.Y3JvcCwxOTgyLDE1NTAsMzMzLDEyNDY.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_36_05484f234719047.Y3JvcCw3MjQwLDU2NjMsNDEyLDA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_37_115.jpg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">zubair Iqbal</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">United
+                                                    Kingdom
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Zubair Iqbal completed 70 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">70 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Zubair</button>
+
+                                </div>
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_38_97ccc8208322753.Y3JvcCwxNjAwLDEyNTEsMCwxMDEz.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_39_79eede107136873.64d2764af16b3.jpeg" alt=""
+                                            width="120px">
+                                        <img src="./imagehire/imgi_40_deb95f97587711.6562574ba5500.jpeg" alt=""
+                                            width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_41_115.jpg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Matias Funes</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Mexico
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Matias Funes completed 60 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">60 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Matias</button>
+
+                                </div>
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_42_5709b8234139605.68bf6cd2790b9.jpeg" alt=""
+                                            width="120px">
+                                        <img src="./imagehire/imgi_43_70fd55219240561.Y3JvcCwxODQxLDE0NDAsMzYwLDA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_44_054a29176147529.Y3JvcCw4NTUsNjY5LDUyLDA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_45_115.png" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Rayen X</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Morocco
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Rayden X completed 60 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">60 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Rayden</button>
+
+                                </div>
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_34_3ebc4e235978293.Y3JvcCwzMDU2LDIzOTAsMTE0MiwzMDI.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_35_3ef232234918681.Y3JvcCwxOTgyLDE1NTAsMzMzLDEyNDY.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_46_a573ae234565171.Y3JvcCwyNzMxLDIxMzYsNjQyLDQ3Mw.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_47_115.jpg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Cubex Design</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">United
+                                                    Kingdom
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Cubex Design completed 58 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">58 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Cubex</button>
+
+                                </div>
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_48_a1a1d6234020387.Y3JvcCwzMzY2LDI2MzMsMCww.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_49_dd6441232004523.Y3JvcCw1NTkzLDQzNzUsMTI0LDA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_50_7f5dbc228643051.Y3JvcCw1NTkzLDQzNzUsMTI0LDA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_51_115.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Visvibe <sup>TM</sup></p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">United
+                                                    States
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Visvibe <sup>TM</sup> completed 53 paid
+                                                project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">53 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Visvibe</button>
+
+                                </div>
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_52_708912222900105.Y3JvcCwxMTQ1LDg5NSwxNTMsMA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_53_48d7c1232471451.Y3JvcCw4MDgsNjMyLDAsMA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_54_d3f119232605219.Y3JvcCwxNjE2LDEyNjQsMCww.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_55_115.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">halit benli</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Poland
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">halit benli completed 46 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">46 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire halit</button>
+
+                                </div>
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_156_9a4905236043099.Y3JvcCwxMzY4LDEwNzAsNDM2LDMxOA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_157_bff475224988765.Y3JvcCwxMTQ3LDg5Nyw2OCwzMQ.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_158_9ea071222094795.Y3JvcCwzNzI5LDI5MTcsMjQwLDA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_159_100.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Yana & Bohdan</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Poland
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Yana & Bohdan completed 41 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">41 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Yana</button>
+
+                                </div>
+
+
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_56_5e78a0234740943.Y3JvcCwzNzEyLDI5MDMsMCwzMzA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_57_946699231691493.Y3JvcCwzMjY0LDI1NTMsMCw0ODQ.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_58_e979da230922491.Y3JvcCwyMjYwLDE3NjcsMCw0ODE.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_155_100.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Romain Bonnet</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">France
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Romain Bonnet completed 41 paid project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">41 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Romain</button>
+
+                                </div>
+
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_64_6e5928232880775.Y3JvcCwyNDIzLDE4OTUsMCww.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_65_0e2338230000253.Y3JvcCwyNDIzLDE4OTUsMCww.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_66_2d2686224353161.Y3JvcCwyNDIzLDE4OTUsMCww.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_167_100.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Joseph Carcais Cortes</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Colombia
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Joseph Carcais Cortes completed 39 paid
+                                                project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">39 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Joseph</button>
+
+                                </div>
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_60_2c593f215336441.Y3JvcCwzMDY4LDI0MDAsMCww.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_61_ceff59192409457.Y3JvcCwxMTM1LDg4OCwwLDA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_62_84f429127198543.Y3JvcCwyNTYxLDIwMDMsNjM0LDUw.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_163_100.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Roman Lieli</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Spain
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Roman Lieli completed 39 paid
+                                                project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">39 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Roman</button>
+
+                                </div>
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_68_79a495234325887.Y3JvcCwxMjgwLDEwMDEsMCwxMzk.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_69_32eca3231807307.Y3JvcCwxMjgwLDEwMDEsMCwxMzk.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_70_13de84229371787.Y3JvcCwxNTM0LDEyMDAsMzQsMA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_171_100.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Rafael Serra</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Portugal
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Rafael Serra completed 30 paid
+                                                project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">30 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Rafael</button>
+
+                                </div>
+
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_72_88c743236311851.Y3JvcCwxMTgwLDkyMywzNjgsNzg.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_73_66f8f9232849959.Y3JvcCwxMzgwLDEwODAsMjcwLDA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_74_69beb8229028997.Y3JvcCwxMzgwLDEwODAsMTAsMA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_175_100.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Chloe Legoux</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">
+                                                    France
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Chloe Legoux completed 30 paid
+                                                project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">30 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Chloe</button>
+
+                                </div>
+
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_76_0f64d6225985541.Y3JvcCwyNzYxLDIxNjAsNTQwLDA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_77_168d93232007665.Y3JvcCwxMzgwLDEwODAsMCww.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_78_3da66e229212421.Y3JvcCwyNzYxLDIxNjAsNDAzLDA.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_83_115.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Sharif Hossain</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">Bangladesh
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Sharif Hossain completed 28 paid
+                                                project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">28 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Hossain</button>
+
+                                </div>
+
+
+
+                                <div class="card-container p-1 flex-shrink-0 me-3 pb-4" style="">
+                                    <div class="images2 d-flex gap-1">
+                                        <img src="./imagehire/imgi_80_876a24228735291.Y3JvcCwyNzg3LDIxODAsNjA3LDMzMQ.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_81_dec382223575977.Y3JvcCwxMDAxNSw3ODM0LDk5LDA.jpeg"
+                                            alt="" width="120px">
+                                        <img src="./imagehire/imgi_82_be3b89200553219.Y3JvcCwyNjAyLDIwMzUsMzczLDMyMg.jpeg"
+                                            alt="" width="120px">
+                                        <div class="circle-image position-absolute">
+                                            <img src="./imagehire/imgi_87_115.jpeg" alt="" class="rounded-circle"
+                                                width="70px" style="border: 3px solid white;">
+                                            <button
+                                                class="button-pro position-absolute start-50  text-white bg-primary rounded-3 fw-medium"
+                                                style="width: 36px; font-size: 12px;">PRO</button>
+                                        </div>
+                                    </div>
+                                    <div class="texts  d-flex justify-content-center align-items-center"
+                                        style="margin-top: 30px; flex-direction: column;">
+                                        <p class="fs-5 fw-medium">Yahia SM</p>
+                                        <div class="d-flex gap-2 justify-content-center align-items-center"
+                                            style="margin-top: -20px;">
+                                            <div class="d-flex align-items-center gap-2" style="margin-top: 5px;">
+                                                <img src="./imagehire/imgi_226_default.png" alt="" width="12px"
+                                                    style="margin-top: -20px;">
+                                                <p class="fw-medium " style="color: grey; margin-top: -7px;">United
+                                                    States
+                                                </p>
+                                            </div>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="bg-success rounded-pill"
+                                                    style="width: 5px; height: 5px; margin-top: -15px;"></div>
+                                                <p class="text-success fw-medium">Responds Quickly</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="button-1 position-relative">
+
+                                        <div class="views bg-dark d-flex flex-column justify-content-center align-items-center pt-3 rounded-3 position-absolute d-none"
+                                            style="width: 360px; height: 70px; line-height: 0; justify-self: center;">
+                                            <p class="text-white fw-medium lh-">Yahia Sm completed 26 paid
+                                                project
+                                                on
+                                            </p>
+                                            <p class="text-white fw-medium lh-">Behance. <a href=""
+                                                    class="text-white">Read
+                                                    their reviews</a></p>
+                                        </div>
+
+                                        <div class=" d-flex justify-content-center " style="">
+                                            <button class="buttoncolor text-primary rounded-2 fw-semibold bg-white"
+                                                style="width: 190px;height: 35px;">26 Projects Completed</button>
+                                        </div>
+                                    </div>
+
+
+                                    <button
+                                        class="button-2 rounded-pill bg-white d-flex justify-content-center align-items-center mt-4 fw-bold"
+                                        style="width: 340px; height: 35px; place-self: center;">Hire Yahia</button>
+
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row col-12 d-flex gap-3 justify-content-center mt-" style="padding-left: px;">
+                <button class="rounded-pill bg-primary text-white fw-medium col-md-12 col-sm-12"
+                    style="width: 180px; height: 43px; font-size: 18px; border: none;">Get Started</button>
+                <button class="rounded-pill bg-white fw-medium col-md-12 col-sm-12"
+                    style="width: 230px; height: 40px; font-size: 18px; border: 1px solid lightgrey;">Browse
+                    Freelancers</button>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <div class="pb-5 w-100" style="background-color: #F5F8FF; padding-top: 100px">
+        <div class="d-flex flex-column justify-content align-items-center mb-" style="margin-bottom: 170px;">
+            <p class="fs-4 fw-bold text-primary"
+                style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">How it works</p>
+            <h1 class="" style="font-size: 3.5vw; line-height: 1;">Hiring on Behance</h1>
+            <h1 class="" style="font-size: 3.5vw; line-height: 1;">Is easy & secure</h1>
+        </div>
+
+
+        <div class="arrow-container " style="margin-bottom: 120px;">
+            <div class=" arrow  d-flex justify-content-center align-items-center" style="">
+                <!-- <img src="./imagehire/lets-icons--arrow-right-light.png" alt="" width="100%" height="50px" class=""> -->
+            </div>
+            <div class="flexed-card row col-12 cards-arrow d-flex gap-3 justify-content-center align-items-center ">
+                <div class="card1 bg-white d-flex flex-column justify-content-center align-items-center pt-4 pb-4 rounded-4 col-lg-3 col-sm-12"
+                    style="width: 430px; border: 1px solid lightgrey;">
+                    <div class="mb-4">
+                        <img src="./imagehire/imgi_218_default.png" alt="" class="" width="30px">
+                    </div>
+                    <div>
+                        <p class="text-primary fw-bold"
+                            style="font-size: 0.9vw; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                            1. Review recommendations</p>
+                        <p class="fw-medium" style="font-size: 0.8vw; ">Share your requirements with recommended <br>
+                            freelancers, and review their
+                            proposals.</p>
+                    </div>
+                </div>
+
+
+                <div class="card1 bg-white d-flex flex-column justify-content-center align-items-center pt-4 pb-4 rounded-4 col-lg-3 col-sm-12"
+                    style="width: 430px; border: 1px solid lightgrey;">
+                    <div class="mb-4">
+                        <img src="./imagehire/imgi_219_default.png" alt="" class="" width="30px">
+                    </div>
+                    <div>
+                        <p class="text-primary fw-bold"
+                            style="font-size: 0.9vw; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                            2. Hire & collaborate</p>
+                        <p class="fw-medium" style="font-size: 0.8vw; ">Start conversations, share files, and join <br>
+                            video calls to discuss project details.</p>
+                    </div>
+                </div>
+
+
+                <div class="card1 bg-white d-flex flex-column justify-content-center align-items-center pt-4 pb-4 rounded-4 col-lg-3 col-sm-12"
+                    style="width: 430px; border: 1px solid lightgrey;">
+                    <div class="mb-4">
+                        <img src="./imagehire/imgi_224_default.png" alt="" class="" width="30px">
+                    </div>
+                    <div>
+                        <p class="text-primary fw-bold"
+                            style="font-size: 0.9vw; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                            3. pay securely on platform</p>
+                        <p class="fw-medium" style="font-size: 0.8vw; ">pay seamlessly with a debit or credit card on
+                            <br>Behance
+                        </p>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+        <div class="  d-flex d-none d-md-block" style="justify-self: center; margin-left: -20px;">
+            <img src="./imagehire/imgi_261_hire-landing-how-1.jpeg" alt="" width="1320px">
+        </div>
+
+
+        <div class="d-flex mt-5" style="justify-self: center; margin-bottom: 100px;">
+            <button class="rounded-pill bg-primary text-white fw-medium col-md-12 col-sm-12"
+                style="width: 180px; height: 43px; font-size: 18px; border: none;">Get Started</button>
+        </div>
+
+
+        <div class=""
+            style="width: 1370px; border: 1px solid #E5E5E5; margin-top: px; display: flex; justify-self: center;">
+        </div>
+
+    </div>
+
+
+    <div class="w-100" style="background-color: #FEFEFF; margin-top: 220px;">
+        <div class="" style="padding-left: 325px;">
+            <p class="text-primary fw-bold lh-1" style="font-size: 22px;">Success Stories</p>
+            <h1 class="lh-1" style="font-size: 3.5vw;">See what clients are saying.</h1>
+            <p class="fw-medium" style="font-size: 20px;">Learn firsthand why 98% of clients recommend their Behance
+                freelancer.</p>
+
+
+
+            <div class="container-fluid">
+                <div class="row flex-nowrap overflow-auto gap-4">
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Absolutely great Designer to work <br>
+                                with.Prompt response, professional <br>
+                                approach and beautiful designs. A <br> DELIGHT TO WORK WITH!</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_90_nadia-fernandez.jpeg" alt="" width="50px">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Nadia Fernandez</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Amazing work as usual! This is my <br>
+                                second time working with Enrico <br>
+                                and it wont be the last. He created <br> some awesome design assets for a <br> project
+                                that helped me elevate the <br> overall brand identity in a <br> professional and timely
+                                manor.</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_91_ulysses-design-co.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Ulysses Design Co</p>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">I had a fantastic experience <br>
+                                working with Lindsey. Her <br>
+                                professionalism, expertise, and<br> communication skills made the <br> project smooth
+                                and successful<br>
+                                Highly recommended!</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_92_kira-koroknai.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Kira Kokoknai</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Very creative, smart, friendly and <br>
+                                professinal.He listens to your<br>
+                                needs and comes up with amazing <br> ideas.Great communication. I am <br> honestly
+                                shocked for the price that I <br> got my brand identity for. <br> HIGHLY RECOMMEND!!!!
+                            </p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_93_oktay-taimour.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Oktay taimour</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Working with Olga was such a <br>
+                                pleasure! she executed the brief <br> beyond expectations. 10/10 <br> recommend!</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_94_max-hofert.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Max Hofert</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 30px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">It has been an absolute pleasure <br>
+                                working with joey! He is very <br> responsive and easy tp collaborate<br>
+                                with. He is also a very talented <br> illustrator, able to bring my vision to <br> life
+                                almost instantly. Its clear he <br> puts a lot of heart in his work and <br> anyone
+                                should be lucky to work <br>with him.
+                            </p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_95_egzona-morina.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Egzona Morina</p>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">I absolutely loved workimg with <br>
+                                Silver Stag. It was easy<br>
+                                communicating my vision and it <br> was definetely brught to life.100% <br> would
+                                recommend.🥰🥰🥰</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_96_rosmil-garcia.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Rosmil Garcia</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Absolutely creative and amazing! <br>
+                                She was very patient with us <br>
+                                through all the edits the clients kept <br> requesting. Thank you Carolina for <br>
+                                amazing work!</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_97_sarah-scharaf.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Sarah Scharaf</p>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Wow, I'm genuinely impressed! The <br>
+                                website design feels fresh and <br>
+                                medern. The brand style guide and <br> logos? Spot on and really<br> professional. if
+                                you're after a<br> memorable brand presence, <br> Martynas is a top pick!</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_98_lukas-baranovas.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Lukas Baranovas</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Kaylee is amazing! The quality of <br>
+                                her work is outstanding, she<br>
+                                provides timely updates, is<br> thoughtful, wildly creative and goes<br> the extra mile
+                                to make sure you love<br> the end product!</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_99_caitlin-jessica-foster.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Caitlin-Jessica Foster</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Alyona is an amazing professional:<br>
+                                polite, constructive, full of ideas, <br>
+                                works fast and makes astonishing <br> illustrations! I enjoyed working with <br> her and
+                                will happily recommend her<br> to everyone!</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_100_Ilya-chidyakin.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Ilya Chidyakin</p>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">She is a genius, super attentive and <br>
+                                detail-oriented. Solution-oriented<br>
+                                and dynamic in her work, highly<br> recommended!</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_101_francisco-rivero.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Francisco Rivero</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Very happy with the work that <br>
+                                Robin did. He pays attention to the <br> smallest details and is very <br> communicative
+                                along the
+                                web <br> design process. We couldnt ask for <br> a better person for the job and we <br>
+                                will most
+                                definitely continue to work <br> with him on future projects.</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_102_mariah-fabe.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Mariah Fabe</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="rounded-4 bg-white col-auto d-flex flex-column  "
+                        style="width: 440px; height: 400px; border: 1px solid lightgrey;padding: 40px; ">
+                        <div class="mb-auto">
+                            <p class="fw-" style="font-size: 22px;">Daniel was very easy to work with <br> and he was
+                                able to create exactly <br> what i asked for! Thank you so much, Daniel!</p>
+                        </div>
+                        <div class="d-flex gap-3 align-items-center">
+                            <img src="./imagehire/imgi_103_karina-h.jpeg" alt="" width="50px"
+                                style="border-radius: 50%;">
+                            <p class="fw-bold" style="font-size: 18px; margin-top: 20px;">Karina H</p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+
+
+            <div class="row col-12 d-flex gap-3 justify-content-center mt-4" style="margin-bottom: 200px;">
+                <button class="rounded-pill bg-primary text-white fw-medium col-md-12 col-sm-12"
+                    style="width: 180px; height: 43px; font-size: 18px; border: none;">Get Started</button>
+                <button class="rounded-pill bg-white fw-medium col-md-12 col-sm-12"
+                    style="width: 230px; height: 40px; font-size: 18px; border: 1px solid lightgrey;">Browse
+                    Freelancers</button>
+            </div>
+
+
+
+            <div class="bg-white rounded-5 d-flex flex-column align-items-center"
+                style="width: 1300px; height: 600px; border: 1px solid lightgrey; margin-bottom: 150px; padding: 100px;">
+                <h1 class="fw-medium" style="font-size: 3.5vw; line-height: 1;">Hiring on behalf </h1>
+                <h1 class="fw-medium" style="font-size: 3.5vw; line-height: ;">of your company?</h1>
+                <p class="fs- fw-medium" style="font-size: 22px; line-height: 1;">We’ll help you find the perfect
+                    freelancer with hand-picked </p>
+                <p class="fs- fw-medium" style="font-size: 22px; line-height: 1;">recommendations.</p>
+                <button class="rounded-pill bg-primary text-white fw-medium col-md-12 col-sm-12"
+                    style="width: 180px; height: 43px; font-size: 18px; border: none; margin-top: 100px;">Contact
+                    Us</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="w-100 position-relative d-flex flex-column justify-content-center align-items-center "
+        style="width: 100%;">
+        <div class="">
+            <img src="./imagehire/imgi_249_hire-bg.jpeg" alt="" width="100%" height="830px"
+                style="filter: brightness(50%);">
+        </div>
+
+        <div class="tap d-flex flex-column justify-content-center align-items-center position-absolute">
+            <p class="fw-medium text-white " style="font-size: 23px;">Hire confidently</p>
+            <h1 class="fw-medium text-white " style="font-size: 3.5vw;">Tap into the world's </h1>
+            <h1 class="fw-medium text-white " style="font-size: 3.5vw; line-height: 0;">largest creative community.</h1>
+            <div class=" rowcards-billion d-flex " style="gap: 35px; margin-top: 80px; ">
+                <div class="cb1 col-sm-12 rounded-5 d-flex flex-column justify-content-center align-items-center"
+                    style="width: 450px; height: 200px;   background-color: #96969640; line-height: 1;">
+                    <p class="fs-2 fw-bold text-white ">50M+</p>
+                    <p class="fs-5 fw-medium text-white " style="line-height: 0;">Over 50 million members in the Behance
+                    </p>
+                    <p class="fs-5 fw-medium text-white " style="line-height: 0;">community</p>
+                </div>
+
+
+                <div class="cb1 col-sm-12 rounded-5 d-flex flex-column justify-content-center align-items-center"
+                    style="width: 450px; height: 200px;   background-color: #96969640; line-height: 1;">
+                    <p class="fs-2 fw-bold text-white ">Billions</p>
+                    <p class="fs-5 fw-medium text-white " style="line-height: 0;">Creative work gets seen billions of
+                        times </p>
+                    <p class="fs-5 fw-medium text-white " style="line-height: 0;">every year on Behance</p>
+                </div>
+
+
+
+                <div class="cb1 col-sm-12 rounded-5 d-flex flex-column justify-content-center align-items-center"
+                    style="width: 450px; height: 200px;  background-color: #96969640; line-height: 1;">
+                    <p class="fs-2 fw-bold text-white ">2006</p>
+                    <p class="fs-5 fw-medium text-white " style="line-height: 0;">Founded in 2006, Behance has been a
+                    </p>
+                    <p class="fs-5 fw-medium text-white " style="line-height: 0;">trusted network for over 15 years</p>
+                </div>
+            </div>
+
+            <div class="row col-12 d-flex gap-3 justify-content-center mt-5" style="margin-bottom: 200px;">
+                <button class="rounded-pill bg-white text-dark fw-medium col-md-12 col-sm-12"
+                    style="width: 180px; height: 43px; font-size: 18px; border: none;">Get Started</button>
+                <button class="rounded-pill text-white fw-medium col-md-12 col-sm-12"
+                    style="width: 230px; height: 40px; font-size: 18px; border: 1px solid lightgrey; background: transparent;">Browse
+                    Freelancers</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="bg-dark "
+        style="width: 100%; height: 90vh; padding-top: 120px; padding-left: 220px; padding-right: 220px;">
+        <div class="d-flex justify-content-between ">
+            <div class="first">
+                <div class="" style="margin-bottom: 30px;">
+                    <p class=" fw-medium text-white" style="font-size: 25px; line-height: 1;">Browse more designers <br>
+                        available for hire</p>
+                </div>
+
+                <div class="" style="line-height: 1;">
+                    <p class="text-white fw-medium " style="font-size: 18px;">Graphic Designers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Brand Designers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">UI/UX Designers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Illustrators</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Logo Designers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Interaction Designers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Art Directors</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Photographers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Web Designers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Industrial Designers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Architects</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Motion Graphic Designers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Fashion Artists</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">3D Artists</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Comic Artists</p>
+                </div>
+            </div>
+
+
+
+            <div class="second">
+                <div class="" style="margin-bottom: 30px;">
+                    <p class=" fw-medium text-white" style="font-size: 25px; line-height: 1;">Browse top creative <br>
+                        services</p>
+                </div>
+
+                <div class="" style="line-height: 1;">
+                    <p class="text-white fw-medium " style="font-size: 18px;">Logo Design</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Branding Services</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Social Media Design</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Website Design</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Illustrations</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Packaging Design</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Landing Page Design</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">UI/UX Design</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Architexture & Interior Design</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Portraits</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Comics & Character Design</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Graphics for Streamers</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Mentorship</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Sound Design</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Invitation Design</p>
+                </div>
+            </div>
+
+
+
+
+            <div class="third">
+                <div class="" style="margin-bottom: 30px;">
+                    <p class=" fw-medium text-white" style="font-size: 25px; line-height: 1;">Hire Freelancers on <br>
+                        Behance</p>
+                </div>
+
+                <div class="" style="line-height: 1;">
+                    <p class="text-white fw-medium " style="font-size: 18px;">How to Hire Freelance Artists on
+                        <br>Behance
+                    </p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">New Way To Hire Freelancers on
+                        <br>Behance: Book a Service
+                    </p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Hire Creative Talent for your Next <br>
+                        Freelance Project from Behance</p>
+                    <p class="text-white fw-medium " style="font-size: 18px;">Help Center: Hiring on Behance</p>
+
+                </div>
+            </div>
+
+
+
+
+
+            <div class="fourth d-flex flex-column gap-4">
+                <div class="rounded-5 d-flex flex-column justify-content-center align-items-center lh-1"
+                    style="width: 360px; height: 300px; background-color: #96969640; line-height: ;">
+                    <p class="text-white fw-medium" style="font-size: 22px;">Looking for more </p>
+                    <p class="text-white fw-medium" style="font-size: 22px;">designers to hire?</p>
+                    <p class="text-white fw-medium" style="font-size: 22px;">Search all available full</p>
+                    <p class="text-white fw-medium" style="font-size: 22px;">time and freelance</p>
+                    <p class="text-white fw-medium" style="font-size: 22px;"> designers now</p>
+                    <button class="rounded-pill bg-white fw-medium" style="width: 200px; height: 40px;">Start searching
+                        now</button>
+
+                </div>
+                <div class="rounded-5 d-flex flex-column justify-content-center align-items-center lh-1"
+                    style="width: 360px; height: 300px; background-color: #96969640;">
+                    <p class="text-white fw-medium" style="font-size: 22px;">Hiring? We'll help you </p>
+                    <p class="text-white fw-medium" style="font-size: 22px;">find a freelancer:get</p>
+                    <p class="text-white fw-medium" style="font-size: 22px;">matched with hand-</p>
+                    <p class="text-white fw-medium" style="font-size: 22px;">picked</p>
+                    <p class="text-white fw-medium" style="font-size: 22px;"> recommendations</p>
+                    <button class="rounded-pill bg-white fw-medium" style="width: 150px; height: 40px;">Contact us
+                        now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div style="">
+        <img src="./imagehire/imgi_104_creator-pro-upsell-banner-border.jpeg" alt="" style="width: 100%;">
+    </div>
+
+
+
+    <div class="d-flex justify-content-center align-items-center mb-3 mt-3">
+        <span class=" fw-bold" style="font-size: 19px;">Upgrade to Behance Pro today:</span>
+        <span class="fw-medium" style="font-size: 18px;"> Get advanced analytics, a custom portfolio website, and more features to grow your
+            creative career. <span class="text-primary fw-bold">Start your 7 day free trial</span></span>
+    </div>
+
+
+
+    <div class="w-100 bg-dark pb-3">
+        <div class=" d-flex  " style="padding-top: 130px;">
+            <div class="w-25 d-flex justify-content-center align-items-center ms-5">
+                <img src="./imagehire/behance_white_logo-removebg-preview.png" alt="" width="150px"
+                    style="margin-top: -400px;">
+            </div>
+            <div class="d-flex gap- w-75" style="gap: 100px;">
+                <div>
+                    <p class="fw-bold fs-5 mb-4 text-light">Built For Creatives</p>
+                    <div class="" style="line-height: 3em;">
+
+                        <a class="anchor fw-medium text-light " style="font-size: 18px;" href="">Try Behance Pro</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Find Inspiration</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Get Hired</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Sell Creative
+                            Assets</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Sell Freelance
+                            Services</a><br>
+                    </div>
+
+                </div>
+
+
+                <div>
+                    <p class="fw-bold fs-5 mb-4 text-light">Find Talent</p>
+                    <div class="" style="line-height: 3em;">
+
+                        <a class="anchor fw-medium text-light " style="font-size: 18px;" href="">Post a Job</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Graphic
+                            Designers</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Photographers</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Video Editors</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Web Designers</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Illustrators</a><br>
+                    </div>
+
+                </div>
+
+
+
+                <div>
+                    <p class="fw-bold fs-5 mb-4 text-light">Behance</p>
+                    <div class="" style="line-height: 3em;">
+
+                        <a class="anchor fw-medium text-light " style="font-size: 18px;" href="">About Behance</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Adobe Portfolio</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Download the App</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Blog</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Careers</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Help Center</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Contact Us</a><br>
+                        <a class="anchor fw-medium text-light" style="font-size: 18px;" href="">Login</a><br>
+                    </div>
+
+                </div>
+
+
+
+
+                <div>
+                    <p class="fw-bold fs-5 mb-4 text-light">Social</p>
+                    <div class="" style="line-height: 3em;">
+                        <div class="d-flex gap-3">
+                            <div class="d-flex align-items-center justify-content-center"
+                                style="width: 20px; height: 20px; border-radius: 50%; background-color: grey;">
+                                <img src="./imagehire/ph--instagram-logo-light.png" alt="" width="20px">
+                            </div>
+                            <a class="anchor fw-medium text-light" style="font-size: 18px; margin-top: -15px;"
+                                href="">Instagram</a>
+                        </div>
+
+
+                        <div class="d-flex gap-3 mt-2">
+                            <div class="d-flex align-items-center justify-content-center"
+                                style="width: 20px; height: 20px; border-radius: 50%; background-color: grey;">
+                                <img src="./imagehire/ph--twitter-logo-fill.png" alt="" width="20px">
+                            </div>
+                            <a class="anchor fw-medium text-light" style="font-size: 18px; margin-top: -15px;"
+                                href="">Twitter</a>
+                        </div>
+
+
+                        <div class="d-flex gap-3">
+
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="./imagehire/famicons--logo-pinterest.png" alt="" width="25px">
+                                <a class="anchor fw-medium text-light" style="font-size: 18px; margin-top: -px;"
+                                    href="">Pinterest</a>
+                            </div>
+                        </div>
+
+
+                        <div class="d-flex gap-3">
+
+                            <div class="d-flex align-items-center gap-3">
+                                <img src="./imagehire/famicons--logo-facebook.png" alt="" width="25px">
+                                <a class="anchor fw-medium text-light" style="font-size: 18px; margin-top: -px;"
+                                    href="">Faceebook</a>
+                            </div>
+                        </div>
+
+
+                        <div class="d-flex gap-3 mt-2">
+                            <div class="d-flex align-items-center justify-content-center"
+                                style="width: 20px; height: 20px; border-radius: 50%; background-color: grey;">
+                                <img src="./imagehire/streamline-logos--linkedin-logo-solid (1).png" alt=""
+                                    width="16px">
+                            </div>
+                            <a class="anchor fw-medium text-light" style="font-size: 18px; margin-top: -15px;"
+                                href="">LinkedIn</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+
+        <div class="d-flex justify-content-center"
+            style="width: 1600px; background-color ; margin-top: 100px; border: 1px solid grey; display: flex; align-self: center; justify-self: center;">
+        </div>
+
+
+        <div class="d-flex mt-4 justify-content-between " style="padding-left: 250px; padding-right: 250px;">
+            <div class=" left-down d-flex gap-5 align-items-center">
+                <img src="./imagehire/logos--adobe.png" alt="" width="100px">
+                <div class="d-flex align-items-center gap-1">
+                    <img src="./imagelevel1project/gravity-ui--circle-letter-c.png" alt="" width="15px">
+                    <p class="text-white mt-3 fw-medium">2025 Adobe Inc. All rights reserved.</p>
+                </div>
+            </div>
+            <div class="right-down d-flex gap-4">
+                <div class="d-flex align-items-center">
+                    <p class="text-light">English</p>
+                    <img src="./imagehire/gridicons--dropdown (2).png" alt="" width="20px"
+                        style="margin-top: -10px;">
+                </div>
+                <div class="mt-2 d-flex gap-4">
+                    <a class="anchor text-white fw-medium" href="">TOU</a>
+                    <a class="anchor text-white fw-medium" href="">Privacy</a>
+                    <a class="anchor text-white fw-medium" href="">Community</a>
+                    <a class="anchor text-white fw-medium" href="">Cookie Preference</a>
+                    <a class=" text-white" href="">Do not sell or share my personal information</a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

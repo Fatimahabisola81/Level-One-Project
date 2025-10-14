@@ -1,0 +1,1495 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+
+
+  <style>
+    li:hover,
+    .dropdown-item:hover {
+      background: transparent !important;
+    }
+
+
+    .starts {
+      display: none;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      text-align: center;
+    }
+
+    .start:hover .starts {
+      display: block !important;
+      opacity: 1;
+      z-index: 1050;
+    }
+
+    nav.navbar {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    body {
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .startes {
+      position: relative;
+      text-align: center;
+      background: linear-gradient(to right, #0034E8, #001FAA);
+      cursor: pointer;
+
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block !important;
+      z-index: 1050;
+    }
+
+
+    @media (min-width :480px) and (max-width:1023px) {
+      .behance {
+        display: none;
+      }
+
+      .first-page {
+        display: none;
+      }
+
+    }
+
+    .dropdown-menu {
+      right: 0 !important;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+
+
+    a {
+      text-decoration: none;
+
+    }
+
+    a:hover {
+      text-decoration: underline !important;
+      text-decoration-color: black;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    .filt:hover {
+      border: 1px solid #E8E8E8 !important;
+      background-color: white !important;
+    }
+
+    .row1 {
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .text {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .under a {
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .down-all {
+      padding-left: 100px;
+    }
+
+
+    @media (max-width: 768px) {
+      .start {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+    }
+
+
+
+    @media (max-width: 992px) {
+      .behance {
+        display: none !important;
+      }
+
+      .first-page {
+        display: none !important;
+      }
+
+      .start {
+        margin-top: 10px;
+      }
+
+      .startes {
+        width: auto;
+        padding: 0 20px;
+      }
+
+      /* Center items when collapsed */
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .nav-item {
+        margin: 5px 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .dropdown-menu {
+        left: 0 !important;
+        right: auto !important;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 80%;
+        height: 100vh;
+        background: #fff;
+        padding: 2rem 1.5rem;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.4s ease;
+        z-index: 2000;
+      }
+
+      .navbar-collapse.show {
+        transform: translateX(0);
+      }
+
+      .navbar-toggler {
+        border: none;
+        z-index: 2100;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      .navbar-nav .nav-link {
+        font-size: 1.1rem;
+        color: #000 !important;
+        padding: 10px 0;
+      }
+
+      /* This adds a transparent dark background behind the open menu */
+      .navbar-collapse.show::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 80%;
+        width: 20%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: -1;
+      }
+    }
+
+    .search-icon {
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.6;
+    }
+
+    .Search-input {
+      background-color: #F9F9F9;
+    }
+
+
+    .hero {
+      background-image: url('./Behance images and icons 2/first image.webp');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+    }
+
+    .second-page {
+      background: linear-gradient(to bottom, #F6F9FF, #FEFEFF);
+    }
+
+    .feature-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      /* smooth transition */
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .third-page {
+      background: linear-gradient(to bottom, #F6F9FF, #FEFEFF);
+
+    }
+
+    .icon {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .round {
+      border-radius: 15px;
+    }
+
+
+    .rounded-banner {
+      border-radius: 12px;
+    }
+
+
+
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .testimonial-div {
+      max-width: 2000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    
+
+    .testimonial-text {
+      font-size: 16px;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .testimonial-author img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .testimonial-author span {
+      font-weight: 600;
+      color: #111;
+      font-size: 14px;
+    }
+
+    /* Carousel */
+    .carousel-item {
+      padding: 10px;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: gray;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      width: 40px;
+      height: 40px;
+      background-size: 60%;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial-card {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <!-- Nav begin -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        <img src="./Behance images and icons 2/Beeeeeee-removebg-preview.png" alt="" width="40px">
+      </button>
+
+
+      <a class="navbar-brand ms-2 behance" href="#"><img
+          src="./Behance images and icons 2/behances_s_logo-removebg-preview.png" alt="" width="90px"></a>
+      <!-- Where i carry button -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fw-bold" aria-current="page" href="../Level1 project/index.html">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fw-bold" href="#">Jobs</a>
+          </li>
+          <li class="nav-item dropdown position-relative">
+            <a class="nav-link fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Resources
+              <img src="./Behance images and icons 2/ri--arrow-drop-down-line (4).png" alt="" width="20px">
+            </a>
+            <ul class="dropdown-menu position-absolute d-none">
+              <li><a class="dropdown-item fw-bold" href="#">Overview</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Career Guides</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Commissioned Projects</a></li>
+              <li><a class="dropdown-item fw-bold" href="#">Creative Apprenticeship</a></li>
+            </ul>
+          </li>
+          <li>
+            <p class="" style="color: gray;">|</p>
+          </li>
+
+          <li class="nav-item dropdown position-relative">
+            <a class="nav-link fw-bold" href="../hire folder/hire.html">
+              Hire
+              <img src="./Behance images and icons 2/ri--arrow-drop-down-line (4).png" alt="" width="20px">
+            </a>
+
+
+            <ul class="dropdown-menu position-absolute d-none">
+              <div class="d-flex align-items-center">
+                <img src="./Behance images and icons 2/streamline-ultimate-color--notes-book-text.png" alt=""
+                  class="ms-3" width="20px">
+                <li><a class="dropdown-item fw-medium" href="#">Hiring Dashboard</a></li>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src="./Behance images and icons 2/octicon--search-24 (1).png" alt="" class="ms-3" width="18px">
+                <li><a class="dropdown-item fw-medium" href="#">Freelancers</a></li>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src="./Behance images and icons 2/oui--i-in-circle.png" alt="" class="ms-3" width="20px">
+                <li><a class="dropdown-item fw-medium" href="#">Hiring on Behance</a></li>
+              </div>
+              <div class="d-flex align-items-center">
+                <img src="./Behance images and icons 2/oui--plus-in-circle.png" alt="" class="ms-3" width="16px">
+                <li><a class="dropdown-item fw-medium" href="#">Creating New Job</a></li>
+              </div>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item text-secondary" href="#">Logo Designers</a></li>
+              <li><a class="dropdown-item text-secondary" href="#">Brand Designers</a></li>
+              <li><a class="dropdown-item text-secondary" href="#">Website Designers</a></li>
+              <li><a class="dropdown-item text-secondary" href="#">Illustrators</a></li>
+              <li><a class="dropdown-item text-secondary" href="#">Social Media Designers</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Search Bar -->
+        <div class="search-container mx-auto d-none d-lg-flex align-items-center justify-content-center flex-grow-1">
+          <div class="position-relative w-100 rounded-pill" style="max-width: 600px; background-color: #F9F9F9; ">
+            <input type="text" class="form-control search-input ps-5 py-1 rounded-pill" placeholder="Search..."
+              aria-label="Search">
+            <img src="./Behance images and icons 2/octicon--search-24 (1).png" alt="search" width="18"
+              class="search-icon position-absolute">
+          </div>
+        </div>
+
+
+        <div class="start">
+          <a href="../start free trial folder/trial.html">
+                 <div class="startes rounded-pill text-white fw-medium d-flex align-items-center justify-content-center"
+            style="height:32px; width: 130px; ">Start Free Trial</div>
+          </a>
+     
+          <div class="starts text-white d-flex align-items-center justify-content-center d-none ps-3"
+            style="width: 260px; height: 30px; background-color: black;"><small>Try Behance Pro with a 7-day free
+              trial</small></div>
+        </div>
+        <button class="rounded-pill text-primary fw-medium border-0 ms-3"
+          style="width: 90px; height: 35px; background-color: #E0EAFF;">Sign in</button>
+        <!-- black adobe starts -->
+        <li class="nav-item dropdown position-relative">
+          <a class="nav-link fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="./Behance images and icons 2/Adobe_logo-removebg-preview.png" alt="" width="60px"
+              class="ms-3 me-3 ">
+          </a>
+          <!-- dropdown-starts -->
+          <ul class="dropdown-menu dropdown-menu-end position-absolute d-none p-3">
+
+            <div style="width: 440px; height:65px; background-color: #DEE8FF;" class="rounded-2 p-2 mb-1">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <img src="./Behance images and icons 2/Adobe_red-removebg-preview.png" alt="" class="ms-3"
+                    width="30px">
+                  <p class="text-secondary ms-2 mt-3">|</p>
+                  <div class="lh-1">
+                    <li><a class="dropdown-item fw-bold text-primary " href="#">Go to adobe.com</a></li>
+                    <li><a class="dropdown-item text-primary" href="#" style="font-size: 12px;">Access your apps,
+                        services, files, and more</a></li>
+                  </div>
+                </div>
+                <div><img src="./Behance images and icons 2/flowbite--arrow-right-outline.png" alt="" width="24px">
+                </div>
+              </div>
+            </div>
+
+            <div style="width: 440px; height:65px; background-color: #DEE8FF;" class="rounded-2 p-2 mb-1">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <img src="./Behance images and icons 2/Adobe_shiny_style-removebg-preview.png" alt="" class="ms-3"
+                    width="20px">
+                  <p class="text-secondary ms-2 mt-3">|</p>
+                  <div class="lh-1">
+                    <li><a class="dropdown-item fw-bold text-primary " href="#">Go Adobe Express free</a></li>
+                    <li><a class="dropdown-item text-primary" href="#" style="font-size: 12px;">Quickly make content
+                        from thousands of free templates</a></li>
+                  </div>
+                </div>
+                <div><img src="./Behance images and icons 2/flowbite--arrow-right-outline.png" alt="" width="24px">
+                </div>
+              </div>
+            </div>
+
+            <div style="width: 440px; height:65px; background-color: #DEE8FF;" class="rounded-2 p-2 mb-1">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <img src="./Behance images and icons 2/Adobe_stock_logo-removebg-preview.png" alt="" class="ms-1"
+                    width="40px">
+                  <p class="text-secondary ms-2 mt-3">|</p>
+                  <div class="lh-1">
+                    <li><a class="dropdown-item fw-bold text-primary " href="#">30-day free trial of Adode Stock</a>
+                    </li>
+                    <li><a class="dropdown-item text-primary" href="#" style="font-size: 12px;">835M+ assests, plus edit
+                        with ease using generative AI</a></li>
+                  </div>
+                </div>
+                <div><img src="./Behance images and icons 2/flowbite--arrow-right-outline.png" alt="" width="24px">
+                </div>
+              </div>
+            </div>
+
+            <div style="width: 440px; height:65px; background-color: #DEE8FF;" class="rounded-2 p-2">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                  <img src="./Behance images and icons 2/Beeeeeee-removebg-preview.png" alt="" class="ms-3"
+                    width="20px">
+                  <p class="text-secondary ms-2 mt-3">|</p>
+                  <div class="lh-1">
+                    <li><a class="dropdown-item fw-bold text-primary " href="#">7-day free trial of Behance Pro</a></li>
+                    <li><a class="dropdown-item text-primary" href="#" style="font-size: 14px;">Supercharge your
+                        creative career with behance Pro</a></li>
+                  </div>
+                </div>
+                <div><img src="./Behance images and icons 2/flowbite--arrow-right-outline.png" alt="" width="24px">
+                </div>
+              </div>
+            </div>
+        </li>
+        </ul>
+        <!-- black adobe ends -->
+
+      </div>
+    </div>
+  </nav>
+  <!-- Nav ends -->
+
+
+  <!-- Page 1 starts -->
+  <div style="width: 100%; position: relative; min-height: 100vh;" class="hero text-white text-center">
+    <div class="lh-1 d-flex flex-column align-items-center justify-content-center text-center mx-auto"
+      style="padding-top: 270px;">
+
+      <p class="fw-bold mb-0" style="font-size: 75px;">Accelerate Your Creative</p>
+      <p class="fw-bold" style="font-size: 75px;">Career with Behance Pro</p>
+      <p class="fw-medium" style="font-size: 23px;">Take your career further with tools designed to showcase your</p>
+      <p class="fw-medium" style="font-size: 23px;">creativity, reach more people, and earn more—all in one place.</p>
+
+
+      <div class="d-flex flex-column flex-md-row gap-3 mt-5 justify-content-center align-items-center">
+        <button class="btn rounded-pill bg-white fw-bold text-primary" style="width: 160px;">Start Free Trial</button>
+        <button class="btn rounded-pill border border-white text-white fw-bold" style="width: 160px;">Compare
+          Plans</button>
+      </div>
+    </div>
+  </div>
+  <!-- Page 1 ends -->
+
+  <!-- Pge 2 begins -->
+  <div class="w-100 second-page d-flex flex-column align-items-center" style="min-height: 70vh;">
+    <p class="fw-bold text-center" style="font-size: 60px; margin-top: 100px;">Why upgrade to Pro?</p>
+
+    <div class="container mt-4">
+      <div class="row justify-content-center g-4">
+
+        <!-- Card 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card rounded-4 d-flex align-items-center pt-5 border-primary h-100n pb-4 feature-card">
+            <div class="rounded-4 border border-1 border-primary d-flex align-items-center justify-content-center mb-3"
+              style="width: 70px; height: 70px;">
+              <img src="./Behance images and icons 2/marketeq--zig-zag-left-up-arrow.png" alt="" width="50px">
+            </div>
+            <p class="fw-bold fs-4 mt-2 text-center">Expand Your Reach</p>
+            <p class="fw-medium mb-0 mt-1 text-center" style="font-size: 16px;">Reach more clients and collaborators and
+              get your</p>
+            <p class="fw-medium ms-1 text-center" style="font-size: 16px;">work seen by the right people at the right
+              time.</p>
+            <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
+              <p class="text-primary fw-medium mb-0">Learn More</p>
+              <img src="./Behance images and icons 2/iconamoon--arrow-down-2-thin (2).png" alt="" width="24px">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card rounded-4 d-flex align-items-center pt-5 border-success h-100 pb-4 feature-card">
+            <div class="rounded-4 border border-1 border-success d-flex align-items-center justify-content-center mb-3"
+              style="width: 70px; height: 70px;">
+              <img src="./Behance images and icons 2/streamline-cyber--money-bag-1.png" alt="" width="50px">
+            </div>
+            <p class="fw-bold fs-4 mt-2 text-center">Grow Your Earnings</p>
+            <p class="fw-medium mb-0 text-center" style="font-size: 16px;">Get exclusive access to premium freelance
+              jobs</p>
+            <p class="fw-medium ms-1 text-center" style="font-size: 16px;">from top clients with no platform fees.</p>
+            <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
+              <p class="text-success fw-medium mb-0">Learn More</p>
+              <img src="./Behance images and icons 2/iconamoon--arrow-down-2-thin (1).png" alt="" width="24px">
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card rounded-4 d-flex align-items-center pt-5 h-100 pb-4 feature-card"
+            style="border: 1px solid purple;">
+            <div class="rounded-4 d-flex align-items-center justify-content-center mb-3"
+              style="width: 70px; height: 70px; border: 1px solid purple;">
+              <img src="./Behance images and icons 2/material-symbols-light--star-shine-outline-rounded.png" alt=""
+                width="50px">
+            </div>
+            <p class="fw-bold fs-4 mt-2 text-center">Stand Out from the Crowd</p>
+            <p class="fw-medium mb-0 text-center" style="font-size: 16px;">Reach more clients and collaborators and get
+              your</p>
+            <p class="fw-medium ms-1 text-center" style="font-size: 16px;">work seen by the right people at the right
+              time.</p>
+            <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
+              <p class="fw-medium mb-0" style="color: purple;">Learn More</p>
+              <img src="./Behance images and icons 2/iconamoon--arrow-down-2-thin.png" alt="" width="24px">
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-column flex-md-row gap-3 mt-5 justify-content-center align-items-center">
+          <button class="btn rounded-pill bg-black fw-bold text-white" style="width: 160px;">Start Free Trial</button>
+          <button class="btn rounded-pill border border-white text-black fw-bold"
+            style="width: 160px; background-color: #F0F0F0;">Compare Plans</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- page 2 ends -->
+
+  <!-- pAGE 3 STARTS -->
+  <div style=" width: 100%; margin-top: 100px; padding-top: 100px;"
+    class="third-page d-flex flex-column align-items-center">
+
+    <div class="rounded-4 border border-1 border-success d-flex align-items-center justify-content-center mb-3"
+      style="width: 70px; height: 70px; background-color: white;">
+      <img src="./Behance images and icons 2/marketeq--zig-zag-left-up-arrow.png" alt="" width="50px">
+    </div>
+    <p class="fw-bold fs-4 text-primary mt-1 text-center">Expand Your Reach</p>
+    <div class="lh-1">
+      <p class="fw-bold text-center" style="font-size: 65px; ">Get your work seen by more clients</p>
+      <p class="fw-bold text-center" style="font-size: 65px;"> and collaborators</p>
+    </div>
+    <button class="btn rounded-pill bg-black fw-bold text-white mt-2" style="width: 160px;">Start Free Trial</button>
+
+
+
+
+    <div class="mt-5 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 700px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/boost your project.webp" alt="Background" class="img-fluid w-100 h-100"
+          style="object-fit: cover; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">Boost Your Project</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;">Highlight your best work and make sure it reaches</p>
+        <p class="fw-medium" style="font-size: 18px;">the right eyes at the right time.</p>
+      </div>
+    </div>
+
+
+    <div class="mt-4 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 690px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/see who viewed your image.webp" alt="Background"
+          class="img-fluid w-100 h-100"
+          style="object-fit: cover; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">See who's viewed your profile and projects</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;">Get detailed insights on who's engaging with your</p>
+        <p class="fw-medium mb-0" style="font-size: 18px;"> work and how they found you, so you can follow up</p>
+        <p class="fw-medium" style="font-size: 18px;">with potential clients and collaborators.</p>
+      </div>
+    </div>
+
+
+    <div class="mt-4 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 700px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/get noticed.webp" alt="Background" class="img-fluid w-100 h-100"
+          style="object-fit: cover; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">Get noticed</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;"> Schedule your projects to publish at a set day/time</p>
+        <p class="fw-medium mb-0" style="font-size: 18px;"> to get maximum engagement with your audience.</p>
+      </div>
+    </div>
+
+
+
+    <div class="container py-5" style="height: 400px; width: 1180px;">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center px-4 py-4 rounded-banner"
+        style="background:linear-gradient(90deg,#007bff,#0025BD); color:white;">
+
+        <!-- Left Text Section -->
+        <div class="text-center d-flex gap-5 text-md-start mb-3 mb-md-0">
+          <h1 style="font-weight:900; font-size:4.5rem; margin:0;">45%</h1>
+          <div>
+            <p style="margin:0; font-size:24px; line-height:1.4;">
+              Pro members see their views and </p>
+            <p style="margin:0; font-size:24px; line-height:1.4;">engagement increase by an average of </p>
+            <strong style="font-size: 24px;">45% in their first month</strong>
+          </div>
+        </div>
+
+        <!-- Right Button -->
+        <a href="#" class="btn btn-light fw-semibold rounded-pill px-4 py-2"
+          style="font-size:14px; white-space:nowrap;">
+          Start Free Trial
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- pAGE 4 STARTS -->
+  <div style=" width: 100%; min-height: 100vh; padding-top: 100px;"
+    class="third-page d-flex flex-column align-items-center">
+
+    <div class="rounded-4 border border-1 border-success d-flex align-items-center justify-content-center mb-3 "
+      style="width: 70px; height: 70px; background-color: white;">
+      <img src="./Behance images and icons 2/streamline-cyber--money-bag-1.png" alt="" width="50px">
+    </div>
+    <p class="fw-bold fs-4 text-success mt-1 text-center">Earn More</p>
+    <div class="lh-1">
+      <p class="fw-bold text-center" style="font-size: 65px; ">Get access to more jobs and earn</p>
+      <p class="fw-bold text-center" style="font-size: 65px;"> more with each job</p>
+    </div>
+    <button class="btn rounded-pill bg-black fw-bold text-white mt-2" style="width: 160px;">Start Free Trial</button>
+
+
+
+
+    <div class="mt-5 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 700px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/Confident.webp" alt="Background" class="img-fluid w-100 h-100"
+          style="object-fit: cover; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">Confidently price your projects</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;">Expert tools designed to guide you on pricing</p>
+        <p class="fw-medium" style="font-size: 18px;">projects as competitively as possible.</p>
+      </div>
+    </div>
+
+
+    <div class="mt-4 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 650px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/Access.webp" alt="Background" class="img-fluid w-100 h-100"
+          style="object-fit: cover; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">Access exclusive freelance jobs</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;">Receive weekly recommendations on freelance jobs</p>
+        <p class="fw-medium mb-0" style="font-size: 18px;"> that are a best fit for you.</p>
+      </div>
+    </div>
+
+
+    <div class="mt-4 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 650px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/platform.webp" alt="Background" class="img-fluid w-100 h-100"
+          style="object-fit: cover; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">0% Platform fees</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;">Other marketplaces will take up to 50% of what you</p>
+        <p class="fw-medium mb-0" style="font-size: 18px;"> earn. With Behance Pro, not only will you pay no</p>
+        <p class="fw-medium" style="font-size: 18px;">platform fees. Neither will your clients..</p>
+      </div>
+    </div>
+
+
+
+    <div class="container py-5 col-12 col-md-11" style="height: 400px; width: 1180px;">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center px-4 py-4 rounded-banner"
+        style="background:linear-gradient(90deg,#1C9B1A,#097b06); color:white;">
+
+        <!-- Left Text Section -->
+        <div class="text-center d-flex gap-5 text-md-start mb-3 mb-md-0">
+          <h1 style="font-weight:900; font-size:4.5rem; margin:0;">45%</h1>
+          <div>
+            <p style="margin:0; font-size:24px; line-height:1.4;">
+              Pro members on average see <strong>4x the</strong> </p>
+            <strong style="margin:0; font-size:24px; line-height:1.4;">amount of job inquiries and leads after </strong>
+            <p style="font-size: 24px;">amount of job inquiries and leads after</p>
+          </div>
+        </div>
+
+        <!-- Right Button -->
+        <a href="#" class="btn btn-light fw-semibold rounded-pill px-4 py-2"
+          style="font-size:14px; white-space:nowrap;">
+          Start Free Trial
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- pAGE 5 STARTS -->
+  <div style=" width: 100%; min-height: 100vh; padding-top: 100px;"
+    class="third-page d-flex flex-column align-items-center">
+
+    <div class="rounded-4 d-flex align-items-center justify-content-center mb-3 "
+      style="width: 70px; height: 70px; background-color: white; border: 1px solid purple;">
+      <img src="./Behance images and icons 2/material-symbols-light--star-shine-outline-rounded.png" alt=""
+        width="50px">
+    </div>
+    <p class="fw-bold fs-4 mt-1 text-center" style="color: purple;">Stand Out from the Crowd</p>
+    <div class="lh-1">
+      <p class="fw-bold text-center" style="font-size: 65px; ">Personalize your profile to</p>
+      <p class="fw-bold text-center" style="font-size: 65px;"> showcase your unique brand</p>
+    </div>
+    <button class="btn rounded-pill bg-black fw-bold text-white mt-2" style="width: 160px;">Start Free Trial</button>
+
+
+
+
+    <div class="mt-5 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 700px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/go dark.webp" alt="Background" class="img-fluid w-100 h-100"
+          style="object-fit: cover; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">Confidently price your projects</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;">Expert tools designed to guide you on pricing</p>
+        <p class="fw-medium" style="font-size: 18px;">projects as competitively as possible.</p>
+      </div>
+    </div>
+
+
+    <div class="mt-4 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 655px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/flexible.webp" alt="Background" class="img-fluid w-100 h-100"
+          style="object-fit: cover; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">Access exclusive freelance jobs</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;">Receive weekly recommendations on freelance jobs</p>
+        <p class="fw-medium mb-0" style="font-size: 18px;"> that are a best fit for you.</p>
+      </div>
+    </div>
+
+
+    <div class="mt-4 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 655px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/more engagement.webp" alt="Background" class="img-fluid w-100 h-100"
+          style="object-fit: cover; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">0% Platform fees</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;">Other marketplaces will take up to 50% of what you</p>
+        <p class="fw-medium mb-0" style="font-size: 18px;"> earn. With Behance Pro, not only will you pay no</p>
+        <p class="fw-medium" style="font-size: 18px;">platform fees. Neither will your clients..</p>
+      </div>
+    </div>
+
+
+    <div class="mt-4 d-flex flex-column flex-md-row rounded-4 overflow-hidden shadow-sm" style="width: fit-content;">
+
+      <!-- Image Section -->
+      <div class="image-container position-relative" style="width: 655px; height: 320px; overflow: hidden;">
+        <img src="./Behance images and icons 2/customize mindset.webp" alt="Background" class="img-fluid w-100 h-100"
+          style="object-fit: cover; border: 2px solid black; border-top-left-radius: 1rem; border-bottom-left-radius: 1rem;">
+
+        <!-- Play Icon -->
+        <div class="icon position-absolute top-50 start-50 translate-middle 
+                d-flex align-items-center justify-content-center" style="width: 90px; height: 90px;">
+          <img src="./Behance images and icons 2/icon-park-solid--play (2).png" alt="Play Icon" width="70px">
+        </div>
+      </div>
+
+      <!-- Text Section -->
+      <div class="col-12 col-md-6 bg-white p-4 d-flex flex-column justify-content-center"
+        style="border-top-right-radius: 1rem; border-bottom-right-radius: 1rem;">
+        <h3 class="fw-bold mb-3 fs-5">Your own website</h3>
+        <p class="mb-0 fw-medium" style="font-size: 18px;">Your Pro membership includes full access to Adobe</p>
+        <p class="fw-medium mb-0" style="font-size: 18px;">Portfolio. Build up to 5 fully-branded websites with</p>
+        <p class="fw-medium" style="font-size: 18px;">free hosting and custom domains.</p>
+      </div>
+    </div>
+
+    <hr style="width: 1400px; height: 3px; background-color: #D9E6FF; margin-top: 100px;">
+
+
+  </div>
+  <!-- page 5 ends -->
+
+
+  <!-- 6th page -->
+  <div>
+    <div class="container">
+      <!-- Left-aligned header -->
+      <div class="col-lg-8 col-md-10">
+        <p class="section-title mb-3" style="  color: #0057ff; font-weight: bold; font-size: 20px; ">Success Stories</p>
+        <div class="lh-1">
+          <p class="fw-semibold mb-0" style="font-size: 70px; ">Creators like you are </p>
+          <p class="fw-semibold mt-0" style="font-size: 70px; ">thriving with Behance Pro</p>
+        </div>
+
+        <div class="fw-semibold" style="font-size: 22px; line-height: 1.5;">
+          <p class="mb-0" style=""> Read more about how some of the world's best freelancers, art</p>
+          <p class="mt-0 mb-0">directors, and creatives use Behance Pro to grow their</p>
+          <p class="">creative careers on <a href="#" class="text-black text-decoration-underline ">our blog</a>. </p>
+        </div>
+      </div>
+
+
+
+      <!-- Testimonials Carousel -->
+ <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="6000">
+  <div class="carousel-inner"> 
+
+    <!-- Slide 1 -->
+    <div class="carousel-item active">
+      <div class="row g-4 justify-content-center"> 
+
+        <!-- Harbor -->
+         <div class="col-md-6 col-lg-3">
+          <div class="testimonial-card bg-white p-4 text-center rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+            <p class="testimonial-text" style="font-size:18px; line-height:1.6;">
+              Behance Pro has been great. I have <br>
+              noticed I am getting <strong>more serious</strong> <br>
+              <strong>freelance inquiries</strong> since signing up <br>
+              for Pro.
+            </p>
+            <p class="testimonial-text text-secondary" style="font-size:16px; line-height:1.6;">
+              For me the best feature is the no fees <br>
+              on payments: that is a really big deal. <br>
+              Most marketplaces will do 50/50 split, <br>
+              but Behance pays out a lot, so that was <br>
+              my main reason for going pro.
+            </p>
+            <div class="testimonial-author mt-3">
+              <img src="./Behance images and icons 2/harbor.webp" alt="" class="rounded-circle mb-2" width="60" height="60">
+              <p class="fw-semibold m-0">Harbor Bickmore</p>
+            </div>
+          </div>
+        </div> 
+
+        <!-- Danny -->
+         <div class="col-md-6 col-lg-3">
+          <div class="testimonial-card bg-white p-4 text-center rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+            <p class="testimonial-text" style="font-size:18px; line-height:1.6;">
+              I have had Behance for more than ten <br>
+              years. I have seen so many features <br>
+              and changes all these years, and <br>
+              Behance Pro <strong>is a new giant leap for <br>
+              the best creative platform.</strong>
+            </p>
+            <div class="testimonial-author mt-4">
+              <img src="./Behance images and icons 2/danny.webp" alt="" class="rounded-circle mb-2" width="60" height="60">
+              <p class="fw-semibold m-0">Danny Ivan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kate -->
+       <div class="col-md-6 col-lg-3">
+          <div class="testimonial-card bg-white p-4 text-center rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+            <p class="testimonial-text" style="font-size:18px; line-height:1.6;">
+              Behance has been <strong>my main source <br>
+              of clients this year.</strong> I love Behance Pro, <br>
+              especially the analytics feature — it’s <br>
+              great for tweaking my portfolio and <br>
+              hashtags.
+            </p>
+            <div class="testimonial-author mt-4">
+              <img src="./Behance images and icons 2/kate.webp" alt="" class="rounded-circle mb-2" width="60" height="60">
+              <p class="fw-semibold m-0">Kate Anto</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- SilverStag -->
+         <div class="col-md-6 col-lg-3">
+          <div class="testimonial-card bg-white p-4 text-center rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+            <p class="testimonial-text" style="font-size:18px; line-height:1.6;">
+              I upgraded for 0% platform fees, and <br>
+              since then, selling assets on Behance <br>
+              has become one of <strong>my main sources <br>
+              of income.</strong>
+            </p>
+            <div class="testimonial-author mt-4">
+              <img src="./Behance images and icons 2/silverstag.webp" alt="" class="rounded-circle mb-2" width="60" height="60">
+              <p class="fw-semibold m-0">SilverStag Type Foundry</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div> 
+
+    <!-- Slide 2 -->
+     <div class="carousel-item">
+      <div class="row g-4 justify-content-center">
+
+         <!-- Ulysses -->
+        <div class="col-md-6 col-lg-3">
+          <div class="testimonial-card bg-white p-4 text-center rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+            <p class="testimonial-text" style="font-size:18px; line-height:1.6;">
+              No platform fees on projects has <br>
+              saved us <strong>hundreds of dollars on <br>
+              each project.</strong>
+            </p>
+            <div class="testimonial-author mt-4">
+              <img src="./Behance images and icons 2/ulysses.webp" alt="" class="rounded-circle mb-2" width="60" height="60">
+              <p class="fw-semibold m-0">Ulysses Design Co</p>
+            </div>
+          </div>
+        </div> 
+
+        <!-- Alexandra -->
+         <div class="col-md-6 col-lg-3">
+          <div class="testimonial-card bg-white p-4 text-center rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+            <p class="testimonial-text" style="font-size:18px; line-height:1.6;">
+              I have found Behance Pro account to be <br>
+              incredibly beneficial. One of my favourite <br>
+              features is the statistics tool, which has <br>
+              provided <strong>invaluable insights</strong> into my <br>
+              audience’s preferences and current <br>
+              interests. The 0% platform fees are <br>
+              immensely helpful!
+            </p>
+            <div class="testimonial-author mt-4">
+              <img src="./Behance images and icons 2/alexandra.webp" alt="" class="rounded-circle mb-2" width="60" height="60">
+              <p class="fw-semibold m-0">Alexandra Pacheco</p>
+            </div>
+          </div>
+        </div> 
+
+        <!-- Tiago -->
+         <div class="col-md-6 col-lg-3">
+          <div class="testimonial-card bg-white p-4 text-center rounded-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+            <p class="testimonial-text" style="font-size:18px; line-height:1.6;">
+              The features that made me upgrade <br>
+              without hesitation were the 0% platform <br>
+              fees and the Adobe Portfolio website. <br>
+              These features are useful to me. I’ve <br>
+              also noticed <strong>that my views and leads <br>
+              have increased.</strong>
+            </p>
+            <div class="testimonial-author mt-4">
+              <img src="./Behance images and icons 2/tiago.webp" alt="" class="rounded-circle mb-2" width="60" height="60">
+              <p class="fw-semibold m-0">Tiago Leitao</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div> 
+
+  <!-- Controls -->
+   <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    </div>
+
+    
+
+
+ 
+
+
+    <!-- Call to Action -->
+    <div class="w-100" style="background-color: #FAFBFF; margin-top: 100px;">
+    
+
+      <div class="container text-center py-5">
+        <p class="fw-bold" style="font-size: 70px; margin: 0;">Start your 7 day free trial today</p>
+        <p class="mt-1 fw-semibold" style="font-size: 20px;">Take your creative career to the next level by upgrading to
+          Behance Pro.</p>
+      </div>
+
+      <div class="container" style="max-width: 1050px;">
+        <div class="row justify-content-center gap-3">
+          <!-- Free Plan -->
+          <div class="col-md-5 bg-white border rounded-3 p-4 me-md-3 shadow-sm">
+            <h3 class="fw-bold">Behance</h3>
+            <p class="fw-semibold">Foundational tools to showcase your work and find <br> creative opportunities.</p>
+
+            <h4 class="fw-bold mt-4" style="font-size: 28px;">Free</h4>
+            <ul class="list-unstyled mt-3 fw-semibold" style="font-size: ;">
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Publish projects to showcase your work
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Discover and save inspiration
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Offer freelance services
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Send client proposals
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Sell assets
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Message others and connect with the community
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Access to our full-time job board
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Transact on Behance with 15–30% platform fees
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                See basic stats on your projects
+              </li>
+            </ul>
+          </div>
+
+          <!-- Pro Plan -->
+          <div class="col-md-5 bg-white  rounded-3 p-4 shadow-sm" style="border: 3px solid #0061FF;">
+            <h3 class="fw-bold">Behance <span class="badge bg-primary">PRO</span></h3>
+            <p>High performance tools designed to help you stand out <br> and earn more.</p>
+
+            <h3 class="fw-bold mt-4">₦17,200.00<span class="fs-6 fw-bold"> /mo</span></h3>
+
+            <ul class="list-unstyled mt-3 fw-semibold">
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Publish projects to showcase your work
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Discover and save inspiration
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Offer freelance services
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Send client proposals
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Sell assets
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Message others and connect with the community
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Access to our full-time job board
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                0% platform fees on all transactions
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Advanced analytics on your profile and projects
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                See your top traffic sources and search terms
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Mark yourself as being available for work
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Exclusive recommended freelance jobs
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Promote your work to targeted audiences (Boost)
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Password protected projects and link-only projects
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Automatic project scheduling
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Search by image
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Profile personalization options including dark theme, customizable button, and sections
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Pricing guidance for freelance work
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Subscription to Adobe Portfolio (includes up to 5 websites)
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Pro badge
+              </li>
+              <li class="d-flex align-items-start mb-2">
+                <img src="./Behance images and icons 2/green mark.png" alt="" width="20" class="me-2">
+                Understand your followers' interests
+              </li>
+              <div class="text-center mt-4" style="margin-left: -170px;">
+                <a href="#" class="btn btn-primary fw-semibold px-4 py-2"
+                  style="background-color: #0057FF; border-color: #0057FF; border-radius: 25px;">
+                  Start your free trial
+                </a>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <hr class="w-100 mt-5 mb-0"
+      style="height: 6px; border: none; background:linear-gradient(to right, purple, #FEB21D, #FE5C30, #EEABEA, #F9693B);">
+
+    <div class="container d-flex justify-content-center mb-3 mt-3"
+      style="width:90%; flex-wrap:wrap; text-align:center; margin:auto;">
+      <span class="fw-bold">Upgrade to Behance Pro today:</span>
+      <span class="ms-1 fw-medium">Get advanced analytics, a custom portfolio website, and more features to grow your
+        creative career.</span>
+      <b class="ms-2 text-primary fw-bold">Start your 7-day free trial</b>
+    </div>
+
+
+    <!-- Blackie -->
+     <div class="container-fluid align-items-center d-flex bg-dark " style="padding-top: 130px;">
+      <div class="w-25 " style="padding-left: 200px; margin-top: -350px;">
+
+        <img src="./Behance images and icons 2/white_behance-removebg-preview.png" alt="" width="190px">
+      </div>
+
+
+      <div class="d-flex">
+
+
+        <div class="down-all">
+          <ul class="">
+            <p class="Fw-bold text-white fs-5 pb-4 ">Built For Creatives</p>
+            <div class="3em under">
+              <li><a href="" class="text-white ">Try Behance Pro</a></li>
+              <li><a href="" class="text-white ">Find Inspiration</a></li>
+              <li><a href="" class="text-white ">Get Hired</a></li>
+              <li><a href="" class="text-white ">Sell Creatives Assests</a></li>
+              <li><a href="" class="text-white ">Sell Freelance Services</a></li>
+            </div>
+          </ul>
+        </div>
+
+
+        <div class="down-all">
+          <ul class="">
+            <p class="Fw-bold text-white fs-5 pb-4 ">Find Talents</p>
+            <div class="3em under">
+              <li><a href="" class="text-white ">Post a Job</a></li>
+              <li><a href="" class="text-white ">Graphic Designers</a></li>
+              <li><a href="" class="text-white ">Photographers</a></li>
+              <li><a href="" class="text-white ">Video Editors</a></li>
+              <li><a href="" class="text-white ">Web Designers</a></li>
+              <li><a href="" class="text-white ">Illustrators</a></li>
+            </div>
+          </ul>
+        </div>
+
+
+        <div class="down-all">
+          <ul class="">
+            <p class="Fw-bold text-white fs-5 pb-4 ">Behance</p>
+            <div class="3em under">
+              <li><a href="" class="text-white ">About Behance</a></li>
+              <li><a href="" class="text-white ">Adobe Portfolio</a></li>
+              <li><a href="" class="text-white ">Download the App</a></li>
+              <li><a href="" class="text-white ">Blog </a></li>
+              <li><a href="" class="text-white ">Careers</a></li>
+              <li><a href="" class="text-white ">Help Center</a></li>
+              <li><a href="" class="text-white ">Contact</a></li>
+              <li><a href="" class="text-white ">Login</a></li>
+            </div>
+          </ul>
+        </div>
+
+
+
+        <div class="down-all ">
+          <ul class="">
+            <p class="Fw-bold text-white fs-5 pb-4 ">Social</p>
+            <div class="3em under">
+              <div class="d-flex  align-items-center gap-1 ">
+                <img src="./Behance images and icons 2/Instagram_icon-removebg-preview.png" alt="" width="20px"
+                  class="mb-2">
+                <a href="" class="text-white ">Instagram</a>
+              </div>
+              <div class="d-flex  align-items-center gap-1 ">
+                <img src="./Behance images and icons 2/akar-icons--twitter-fill.png" alt="" width="20px" class="mb-2">
+                <a href="" class="text-white ">Twitter</a>
+              </div>
+              <div class="d-flex  align-items-center gap-1 ">
+                <img src="./Behance images and icons 2/mdi--pinterest.png" alt="" width="20px" class="mb-2">
+                <a href="" class="text-white ">Pinterest</a>
+              </div>
+              <div class="d-flex  align-items-center gap-1 ">
+                <img src="./Behance images and icons 2/ic--round-facebook.png" alt="" width="20px" class="mb-2">
+                <a href="" class="text-white ">Facebook</a>
+              </div>
+              <div class="d-flex  align-items-center gap-1 ">
+                <img src="./Behance images and icons 2/entypo-social--linkedin-with-circle.png" alt="" width="20px"
+                  class="mb-2">
+                <a href="" class="text-white ">LinkedIn</a>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center bg-dark">
+      <hr class="" style="width: 1450px; height: 3px; background-color: white;">
+    </div>
+    <div class="bg-dark d-flex justify-content-between align-items-center " style="padding-left: 230px;">
+      <div>
+        <img src="./Behance images and icons 2/logos--adobe.png" alt="" width="100px">
+        <span class="text-white ms-3">© 2025 Adobe Inc. All rights reserved.</span>
+      </div>
+
+      <div class="text-white d-flex gap-3" style="padding-right: 225px;">
+        <div>
+          <span style="font-size: 15px; " class="fw-medium">English</span>
+          <img src="./Behance images and icons 2/gridicons--dropdown (1).png" alt="" width="24px">
+        </div>
+
+        <a href="" class="text-white fw-medium" style="font-size: 15px;">TOU</a>
+        <a href="" class="text-white fw-medium" style="font-size: 15px;">Privacy</a>
+        <a href="" class="text-white fw-medium" style="font-size: 15px;">Community</a>
+        <a href="" class="text-white fw-medium" style="font-size: 15px;">Cookie preferences</a>
+        <a href="" class="text-white fw-medium" style="font-size: 15px;">Do not sell or share my personal
+          information</a>
+      </div>
+    
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+      integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>
